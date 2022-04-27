@@ -19,12 +19,13 @@ public class Tuteur extends Etudiant{
 
 	@Override
 	public String toString() {
-		return "Tuteur [matiere=" + matiere + super.toString().substring(9)+ "]";
+		return "Tuteur [matiere=" + matiere + ", "+super.toString().substring(10);
 	}
 	
 	
 	public static void main(String[] args) {
-		
+		Tuteur t = new Tuteur("swaggy","dany",1,15.06,"DEV");
+		System.out.println(t.toString());
 	}
 	
 	
