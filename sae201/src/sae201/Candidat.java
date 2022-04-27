@@ -16,7 +16,15 @@ public class Candidat extends Etudiant {
 	public void setMotivation(boolean motivation) {
 		this.motivation = motivation;
 	}
+
+	@Override
+	public String toString() {
+		return "Candidat [" +super.toString().substring(10,super.toString().length()-2)+", motivation=" + motivation + "]";
+	}
+	public static void main(String[] args) {
+		Candidat t = new Candidat("swaggy","dany",1,15.06,true);
+		System.out.println(t.toString());
 	
-	
+	}
 	
 }
