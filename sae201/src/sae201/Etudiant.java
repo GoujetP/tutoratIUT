@@ -40,6 +40,9 @@ public class Etudiant {
 	public void setMoyenne(double moyenne) {
 		this.moyenne = moyenne;
 	}
-	
-	
+	public String initiale() {
+		return "" + this.getPrenom().substring(0, 1) + this.getNom().substring(0, 1); 	
+	}
+
+
 }

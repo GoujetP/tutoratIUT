@@ -1,4 +1,5 @@
-package saé201;
+package sae201;
+
 public class Enseignant {
     //attributes
     private String name; 
@@ -21,8 +22,8 @@ public class Enseignant {
         return this.matiere;
     }
     public static void main(String[] args){
-        Enseignant enseignant = new enseignant("");
-        String res = enseignant.name+" "+enseignant.prenom+ " : "+enseignant.matiere;
-        Systeme.out.println(res);
+        //Enseignant enseignant = new Enseignant();
+        //String res = enseignant.name+" "+enseignant.prenom+ " : "+enseignant.matiere;
+        //System.out.println(res);
     }
 }

@@ -8,6 +8,12 @@ public class Candidat extends Etudiant {
 		this.motivation=motivation;
 		// TODO Auto-generated constructor stub
 	}
+	
+	public Candidat(String nom, String prenom, int annee, double moyenne) {
+		super(nom, prenom, annee, moyenne);
+		this.motivation = true;
+		// TODO Auto-generated constructor stub
+	}
 
 	public boolean isMotivation() {
 		return motivation;
@@ -21,6 +27,7 @@ public class Candidat extends Etudiant {
 	public String toString() {
 		return "Candidat [" +super.toString().substring(10,super.toString().length()-2)+", motivation=" + motivation + "]";
 	}
+
 	public static void main(String[] args) {
 		Candidat t = new Candidat("swaggy","dany",1,15.06,true);
 		System.out.println(t.toString());
