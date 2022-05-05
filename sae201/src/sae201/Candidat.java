@@ -25,7 +25,7 @@ public class Candidat extends Etudiant {
 
 	@Override
 	public String toString() {
-		return "Candidat [" +super.toString().substring(10,super.toString().length()-2)+", motivation=" + motivation + "]";
+		return "Candidat [" +super.toString().substring(10,super.toString().length()) + ", motivation=" + motivation + "]";
 	}
 
 	public static void main(String[] args) {

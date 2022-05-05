@@ -5,6 +5,7 @@ public class Etudiant {
 	private String prenom;
 	private int annee;
 	private double moyenne;
+	
 	public Etudiant(String nom, String prenom, int annee, double moyenne) {
 		super();
 		this.nom = nom;
@@ -14,7 +15,7 @@ public class Etudiant {
 	}
 	@Override
 	public String toString() {
-		return "Etudiant [nom=" + nom + ", prenom=" + prenom + ", annee=" + annee + ", moyenne=" + moyenne + "]";
+		return "Etudiant [" + prenom + " " + nom + ":" + moyenne + " de moyenne en " + annee + "e annee" + "]";
 	}
 	public String getNom() {
 		return nom;
