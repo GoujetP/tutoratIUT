@@ -12,11 +12,19 @@ public class Tuteur extends Etudiant{
 
 	@Override
 	public String toString() {
+<<<<<<< HEAD
 		return "Tuteur ["+super.toString().substring(10);
 	}
 	
 	
 }
+=======
+		return "Tuteur [" +super.toString().substring(10);
+	}
+	
+	
+
+>>>>>>> a97ee32c14e2a5bc8183090d455ae4dc850937f9
 	
 	
 	
