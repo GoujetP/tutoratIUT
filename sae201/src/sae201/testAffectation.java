@@ -1,4 +1,4 @@
-package Sae;
+package sae201;
 
 import fr.ulille.but.sae2_02.donnees.DonneesPourTester;
 import fr.ulille.but.sae2_02.graphes.GrapheNonOrienteValue;

@@ -1,34 +1,24 @@
 package sae201;
 
 public class Tuteur extends Etudiant{
-	private String matiere;
+	
 
-	public Tuteur(String nom, String prenom, int annee, double moyenne,String matiere ) {
+	public Tuteur(String nom, String prenom, int annee, double moyenne) {
 		super(nom, prenom, annee, moyenne);
-		this.matiere=matiere;
 		// TODO Auto-generated constructor stub
 	}
 
-	public String getMatiere() {
-		return matiere;
-	}
-
-	public void setMatiere(String matiere) {
-		this.matiere = matiere;
-	}
+	
 
 	@Override
 	public String toString() {
-		return "Tuteur [matiere=" + matiere + ", "+super.toString().substring(10);
+		return "Tuteur ["+super.toString().substring(10);
 	}
-	
-	
-	public static void main(String[] args) {
-		Tuteur t = new Tuteur("swaggy","dany",1,15.06,"DEV");
-		System.out.println(t.toString());
-	}
-	
-	
 	
 	
 }
+	
+	
+	
+	
+
