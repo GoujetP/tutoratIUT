@@ -9,7 +9,7 @@ public class Candidat extends Etudiant {
 		// TODO Auto-generated constructor stub
 	}
 	
-	public Candidat(String nom, String prenom, int annee, double moyenne) {
+	public Candidat(String nom, String prenom,double moyenne,int annee) {
 		super(nom, prenom, annee, moyenne);
 		this.motivation = true;
 		// TODO Auto-generated constructor stub
@@ -23,17 +23,8 @@ public class Candidat extends Etudiant {
 		this.motivation = motivation;
 	}
 
-	@Override
 	public String toString() {
 		return "Candidat [" +super.toString().substring(10,super.toString().length()) + ", motivation=" + motivation + "]";
 	}
-<<<<<<< HEAD
-=======
 
-	public static void main(String[] args) {
-		Candidat t = new Candidat("swaggy","dany",1,15.06,true);
-		System.out.println(t.toString());
->>>>>>> a97ee32c14e2a5bc8183090d455ae4dc850937f9
-	
-	
 }

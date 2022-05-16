@@ -5,23 +5,20 @@ import java.util.ArrayList;
 public class GroupeTutore {
 	private int id ; 
 	private static int cpt = 0;
-	private Vivier vivier;
 	private Tuteur tuteur;
-	private ArrayList<Candidat> eleve;
+	private Candidat eleve;
 	
-	public GroupeTutore(Tuteur tuteur, ArrayList<Candidat> eleve,Vivier vivier) {
-		super();
-		this.id = cpt++;
+	public GroupeTutore(Tuteur tuteur, Candidat eleve,Vivier vivier) {
+		this.id = cpt;
 		this.tuteur = tuteur;
 		this.eleve = eleve;
-		this.vivier=vivier;
+		cpt+=1;
+		
 	}
 	
 	public GroupeTutore() {
-		super();
-		this.id = cpt++;
-		this.eleve = new ArrayList<Candidat>();
-		this.vivier=new Vivier();
+		this.id=cpt;
+		cpt+=1;
 	}
 
 	public Tuteur getTuteur() {
@@ -32,17 +29,19 @@ public class GroupeTutore {
 		this.tuteur = tuteur;
 	}
 
-	public ArrayList<Candidat> getEleve() {
+	public Candidat getEleve() {
 		return eleve;
 	}
 
-	public void setEleve(ArrayList<Candidat> eleve) {
+	public void setEleve(Candidat eleve) {
 		this.eleve = eleve;
 	}
 
 	public int getId() {
 		return id;
 	}
+	
+	
 	
 	
 	

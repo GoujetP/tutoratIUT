@@ -10,6 +10,12 @@ public class Vivier {
 		this.tuteurs=new ArrayList<Tuteur>();
 		this.candidats=new ArrayList<Candidat>();
 	}
+	public void setTuteurs(ArrayList<Tuteur> tuteurs) {
+		this.tuteurs = tuteurs;
+	}
+	public void setCandidats(ArrayList<Candidat> candidats) {
+		this.candidats = candidats;
+	}
 	void addTuteur(Tuteur t) {
 		this.tuteurs.add(t);
 	}
@@ -27,11 +33,17 @@ public class Vivier {
 	}
 	
 	
-	public Tuteur getTuteur(int i) {
+	public ArrayList<Tuteur> getTuteurs() {
+		return tuteurs;
+	}
+	public ArrayList<Candidat> getCandidats() {
+		return candidats;
+	}
+	public Tuteur getTuteurI(int i) {
 		return this.tuteurs.get(i);
 	}
 	
-	public Candidat getCandidat(int i) {
+	public Candidat getCandidatI(int i) {
 		return this.candidats.get(i);
 	}
 	
