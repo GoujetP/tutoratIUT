@@ -27,13 +27,7 @@ public class Candidat extends Etudiant {
 	public String toString() {
 		return "Candidat [" +super.toString().substring(10,super.toString().length()) + ", motivation=" + motivation + "]";
 	}
-<<<<<<< HEAD
-=======
 
-	public static void main(String[] args) {
-		Candidat t = new Candidat("swaggy","dany",1,15.06,true);
-		System.out.println(t.toString());
->>>>>>> a97ee32c14e2a5bc8183090d455ae4dc850937f9
 	
 	
 }
