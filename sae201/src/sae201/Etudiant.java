@@ -1,10 +1,12 @@
 package sae201;
 
 public class Etudiant {
+	private static int cpt = 0;
 	private String nom;
 	private String prenom;
 	private int annee;
 	private double moyenne;
+	private int id;
 	
 	public Etudiant(String nom, String prenom, int annee, double moyenne) {
 		super();
@@ -12,6 +14,7 @@ public class Etudiant {
 		this.prenom = prenom;
 		this.annee = annee;
 		this.moyenne = moyenne;
+		this.id=cpt++;
 	}
 	@Override
 	public String toString() {
@@ -41,8 +44,13 @@ public class Etudiant {
 	public void setMoyenne(double moyenne) {
 		this.moyenne = moyenne;
 	}
+	
+	
+	public int getId() {
+		return this.id;
+	}
 	public String initiale() {
-		return "" + this.getPrenom().substring(0, 1) + this.getNom().substring(0, 1); 	
+		return "" + this.getPrenom().substring(0, 1) + this.getNom().substring(0, 1)+id; 	
 	}
 
 

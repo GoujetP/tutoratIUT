@@ -45,24 +45,62 @@ public class Utilisation {
 			ArrayList<String> l2 = new ArrayList();
 	
 			//On remplit nos listes
+			
+				
+			System.out.println(vivier.getCandidats().size());
+	        System.out.println(vivier.getTuteurs().size());
+			if (vivier.getCandidats().size()!=vivier.getTuteurs().size()) {
+				System.out.println("dans le if");
+				
+		          int taille = vivier.getCandidats().size();  
+		          
+		          for (int i = 1; i < taille; i++)
+		          { 
+		               double index = vivier.getCandidatI(i).getMoyenne();  
+		               Candidat c = vivier.getCandidatI(i);  
+		               int j = i-1;  
+		            
+		               while(j >= 0 && vivier.getCandidatI(j).getMoyenne() > index)  
+		               {
+		            	   vivier.getCandidats().set(j+1,vivier.getCandidatI(j));  
+		                    j--;  
+		               }  
+		               vivier.getCandidats().set(j+1, c); 
+		          }
+		          
+		        for (int i = vivier.getCandidats().size()-1; i>vivier.getTuteurs().size()-1; i--) {
+		        	vivier.removeCandidat(i); 
+		        }
+		          
+		        System.out.println(vivier.getCandidats().size());
+		        System.out.println(vivier.getTuteurs().size());
+		       
+			}
+			
+			for(int i = 0 ; i < tuteur.size() ; i++){
+				Tuteur  t = tuteur.get(i);
+				l2.add(t.initiale());
+				System.out.println(t.toString());
+			
+			}
+			
 			for(int i = 0 ; i < tutore.size(); i++){
 				
-				g1.ajouterSommet(tutore.get(i).initiale());
+				
 				l1.add(tutore.get(i).initiale());
 				System.out.println(tutore.get(i).toString());
 			}
-			for(int i = 0 ; i < tuteur.size() ; i++){
-					Tuteur  t = tuteur.get(i);
-					g1.ajouterSommet(t.initiale());
-					l2.add(t.initiale());
-					System.out.println(t.toString());
-				
-			}
 			//Ici, à l'aide d'un double for, nous affectons les poids sur chaques arêtes grâce à notre fonction, pour ensuite faire une affectation de coût minimale
 			for(int i = 0 ; i < vivier.getTuteurs().size() ; i++) {
+				Tuteur  t = tuteur.get(i);
+				g1.ajouterSommet(t.initiale());
 				for(int j = 0 ; j < vivier.getCandidats().size() ; j++) {
-					g1.ajouterArete(vivier.getTuteurI(i).initiale()+i, vivier.getCandidatI(i).initiale()+j, ((20-vivier.getTuteurI(i).getMoyenne())/vivier.getTuteurI(i).getAnnee()+vivier.getCandidatI(i).getMoyenne()));
+					
+					g1.ajouterSommet(tutore.get(j).initiale());
+					//System.out.println(vivier.getTuteurI(i).initiale()+"     "+vivier.getCandidatI(j).initiale()+"     "+((20-vivier.getTuteurI(i).getMoyenne())/vivier.getTuteurI(i).getAnnee()+vivier.getCandidatI(j).getMoyenne()));
+					g1.ajouterArete(vivier.getTuteurI(i).initiale(), vivier.getCandidatI(j).initiale(), ((20-vivier.getTuteurI(i).getMoyenne())/vivier.getTuteurI(i).getAnnee()+vivier.getCandidatI(j).getMoyenne()));
 				}
+				
 			}
 	
 			
@@ -71,7 +109,7 @@ public class Utilisation {
 			
 			System.out.println("\nCouple tuteurs/tutorés");
 			System.out.println(res);
-			System.out.println("Résulta: " + ca.getCout());
+			System.out.println("Résultat: " + ca.getCout());
 			System.out.println(g1);
 		}
 	}
