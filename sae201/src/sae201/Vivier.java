@@ -1,5 +1,8 @@
 package sae201;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class Vivier {
@@ -57,10 +60,55 @@ public class Vivier {
 	void removeCandidat(int index) {
 		this.candidats.remove(index);
 	}
+	
+	public void remplirTuteurCandidat() {
+		ArrayList<Candidat> tutore = new ArrayList<Candidat>();
+		ArrayList<Tuteur> tuteur= new ArrayList<Tuteur>();
+		int cpt =0;
+		int cpt_candidat=0;
+		String line;
+        final String delimiter = ",";
+        try
+        {
+            String filePath = "Etudiant.csv";
+            FileReader fileReader = new FileReader(filePath);
+            BufferedReader reader = new BufferedReader(fileReader);
+            while ((line = reader.readLine()) != null)   //jusque la ligne n'est pas à null
+            {
+            	String[] token = line.split(delimiter);    // separer par le delimiteur
+            	if (Integer.parseInt(token[3])== 1) {
+            		cpt_candidat ++;
+            	}
+            }
+            fileReader.close();
+            fileReader= new FileReader(filePath);
+            reader = new BufferedReader(fileReader);
+            while ((line = reader.readLine()) != null){
+            	String[] token = line.split(delimiter);
+            	
+            	if (cpt<cpt_candidat) {
+                	Candidat c = new Candidat(token[1],token[0],Integer.parseInt(token[3]), Double.parseDouble(token[2]),Motivation.valueOf(token[5]),Matiere.valueOf(token[4]));
+                	tutore.add(c);
+                	
+            	}
+            	else {
+                	Tuteur t = new Tuteur(token[1],token[0], Double.parseDouble(token[2]),Integer.parseInt(token[3]),Matiere.valueOf(token[4]));
+                	tuteur.add(t);
+            	}
+            	cpt++;
+            }    
+            fileReader.close();
+        } 
+        catch (IOException e)
+        {
+            e.printStackTrace();
+        }
+        this.setCandidats(tutore);
+        this.setTuteurs(tuteur);
+	}
 
 	public  void triSuppression() {
-		if (getCandidats().size()!=getTuteurs().size()) {
-			System.out.println("dans le if");
+		if (getCandidats().size()!=getTuteurs().size()) {			
 			
 	          int taille = getCandidats().size();  
 	          
@@ -83,8 +131,6 @@ public class Vivier {
 	        }
 	        //jusque la avec supression du surplus
 	          
-	        System.out.println(getCandidats().size());
-	        System.out.println(getTuteurs().size());
 		}
 		
 	}

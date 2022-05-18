@@ -11,7 +11,7 @@ public class Candidat extends Etudiant {
 		this.matiere=matiere;
 	}
 	
-	public Candidat(String nom, String prenom,double moyenne,int annee,Matiere matiere) {
+	public Candidat(String nom, String prenom,int annee,double moyenne,Matiere matiere) {
 		super(nom, prenom, annee, moyenne);
 		this.motivation = Motivation.PEU_MOTIVE;
 		// TODO Auto-generated constructor stub
