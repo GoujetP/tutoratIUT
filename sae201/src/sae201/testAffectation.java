@@ -1,11 +1,12 @@
 package sae201;
+import java.util.ArrayList;
+import java.util.List;
 
 import fr.ulille.but.sae2_02.donnees.DonneesPourTester;
 import fr.ulille.but.sae2_02.graphes.CalculAffectation;
 import fr.ulille.but.sae2_02.graphes.GrapheNonOrienteValue;
-
-import java.util.ArrayList;
-import java.util.List;
+import sae201.Candidat;
+import sae201.Tuteur;
 
 import fr.ulille.but.sae2_02.graphes.CalculAffectation;
 import fr.ulille.but.sae2_02.graphes.GrapheNonOrienteValue;
@@ -53,7 +54,7 @@ public class testAffectation {
 
 		//On remplit nos listes
 		for(int i = 0 ; i < 5; i++){
-			Candidat  c = new Candidat(tutore[i][1],tutore[i][0],Integer.parseInt(tutore[i][3]),Double.parseDouble(tutore[i][2]));
+			Candidat  c = new Candidat(tutore[i][1],tutore[i][0],Double.parseDouble(tutore[i][2]),Integer.parseInt(tutore[i][3]));
 			g1.ajouterSommet(c.initiale());
 			l1.add(c.initiale());
 			cand.add(c);
@@ -61,7 +62,7 @@ public class testAffectation {
 		}
 		for(int i = 0 ; i < 5 ; i++){
 			if(Integer.parseInt(tuteur[i][3]) > 1) {
-				Tuteur  t = new Tuteur(tuteur[i][1],tuteur[i][0],Integer.parseInt(tuteur[i][3]),Double.parseDouble(tuteur[i][2]));
+				Tuteur  t = new Tuteur(tuteur[i][1],tuteur[i][0],Double.parseDouble(tuteur[i][2]),Integer.parseInt(tuteur[i][3]));
 				g1.ajouterSommet(t.initiale());
 				l2.add(t.initiale());
 				tut.add(t);	
