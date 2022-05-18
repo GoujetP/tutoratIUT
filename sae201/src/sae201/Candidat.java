@@ -27,9 +27,5 @@ public class Candidat extends Etudiant {
 		return "Candidat [" +super.toString().substring(10,super.toString().length()) + ", motivation=" + motivation + ", id ="+getId()+ "]";
 	}
 
-<<<<<<< HEAD
-	
-	
-=======
->>>>>>> a84992042fc6d54eb4c24cdba0b7beebf3ebf2eb
+
 }

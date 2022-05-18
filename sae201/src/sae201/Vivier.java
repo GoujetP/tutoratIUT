@@ -10,16 +10,14 @@ public class Vivier {
 		this.tuteurs=new ArrayList<Tuteur>();
 		this.candidats=new ArrayList<Candidat>();
 	}
-<<<<<<< HEAD
-	
-=======
+
 	public void setTuteurs(ArrayList<Tuteur> tuteurs) {
 		this.tuteurs = tuteurs;
 	}
 	public void setCandidats(ArrayList<Candidat> candidats) {
 		this.candidats = candidats;
 	}
->>>>>>> a84992042fc6d54eb4c24cdba0b7beebf3ebf2eb
+
 	void addTuteur(Tuteur t) {
 		this.tuteurs.add(t);
 	}
@@ -36,9 +34,7 @@ public class Vivier {
 		this.candidats.add(c);
 	}
 	
-<<<<<<< HEAD
-	public Tuteur getTuteur(int i) {
-=======
+
 	
 	public ArrayList<Tuteur> getTuteurs() {
 		return tuteurs;
@@ -47,7 +43,6 @@ public class Vivier {
 		return candidats;
 	}
 	public Tuteur getTuteurI(int i) {
->>>>>>> a84992042fc6d54eb4c24cdba0b7beebf3ebf2eb
 		return this.tuteurs.get(i);
 	}
 	
@@ -62,9 +57,7 @@ public class Vivier {
 	void removeCandidat(int index) {
 		this.candidats.remove(index);
 	}
-<<<<<<< HEAD
-=======
-	
+
 	public  void triSuppression() {
 		if (getCandidats().size()!=getTuteurs().size()) {
 			System.out.println("dans le if");
@@ -97,5 +90,5 @@ public class Vivier {
 	}
 	
 	
->>>>>>> a84992042fc6d54eb4c24cdba0b7beebf3ebf2eb
+
 }
