@@ -45,7 +45,6 @@ public class Etudiant {
 		this.moyenne = moyenne;
 	}
 	
-	
 	public int getId() {
 		return this.id;
 	}

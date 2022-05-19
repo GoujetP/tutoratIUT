@@ -2,6 +2,10 @@ package sae201;
 
 import java.util.ArrayList;
 
+/**
+ * @author daniel.fanion.etu
+ *
+ */
 public class GroupeTutore {
 	private int id ; 
 	private static int cpt = 0;

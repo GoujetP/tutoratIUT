@@ -8,6 +8,12 @@ import fr.ulille.but.sae2_02.graphes.GrapheNonOrienteValue;
 import sae201.Candidat;
 import sae201.Tuteur;
 
+import fr.ulille.but.sae2_02.graphes.CalculAffectation;
+import fr.ulille.but.sae2_02.graphes.GrapheNonOrienteValue;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class testAffectation {
 	
 	public static void main(String[] args) {
@@ -77,7 +83,7 @@ public class testAffectation {
 		
 		System.out.println("\nCouple tuteurs/tutorés");
 		System.out.println(res);
-		System.out.println("Résulta: " + ca.getCout());
+		System.out.println("Résultat: " + ca.getCout());
 		System.out.println(g1);
 	}
 }
