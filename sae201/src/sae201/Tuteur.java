@@ -9,6 +9,10 @@ public class Tuteur extends Etudiant{
 		// TODO Auto-generated constructor stub
 		this.matiere=matiere;
 	}
+	
+	public Matiere getMatiere() {
+		return this.matiere;
+	}
 
 	@Override
 	public String toString() {

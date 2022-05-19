@@ -29,6 +29,11 @@ public class Candidat extends Etudiant {
 	public String toString() {
 		return "Candidat [" +super.toString().substring(10,super.toString().length()-1) + ", motivation=" + motivation + ", id : "+getId()+ "]";
 	}
+	
+	public Matiere getMatiere() {
+		return this.matiere;
+	}
+
 
 
 }

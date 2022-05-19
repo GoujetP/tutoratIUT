@@ -1,12 +1,10 @@
 package sae201;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
+
 import java.util.ArrayList;
 import java.util.List;
 
-import fr.ulille.but.sae2_02.donnees.DonneesPourTester;
+
 import fr.ulille.but.sae2_02.graphes.CalculAffectation;
 import fr.ulille.but.sae2_02.graphes.GrapheNonOrienteValue;
 
@@ -40,30 +38,50 @@ public class Utilisation {
 		}
 	}
 	
-	
+	vivier.remplirTuteurCandidat();
+	ArrayList<GroupeTutore> groupe_tutore = new ArrayList<GroupeTutore>();
+	//Instanciation de notre Graphe g1, où l'on ajoutera nos candidats et tutorants en sommets
+	GrapheNonOrienteValue<String> g1 = new GrapheNonOrienteValue(); 
+	//Les futurs abscisses et ordonnées de notre matrice d'adjacence
+	ArrayList<String> l1 = new ArrayList<String>();
+	ArrayList<String> l2 = new ArrayList<String>();
+	//On remplit nos liste
+	// tri par ordre croissant
+	vivier.triSuppression();
+	tuteurMatriceAdj(vivier.getTuteurs(),l2);
+	tutoreMatriceAdj(vivier.getCandidats(),l1);
+	//Ici, à l'aide d'un double for, nous affectons les poids sur chaques arêtes grâce à notre fonction, pour ensuite faire une affectation de coût minimale
+	AddSommetAffectation(g1,vivier);
+	CalculAffectation ca = new CalculAffectation(g1, l1, l2);
+	List res = ca.getAffectation();
+	System.out.println("\nCouple tuteurs/tutorés");
+	System.out.println(res);
+	System.out.println("Résultat: " + ca.getCout());
+	System.out.println(g1);
 	
 	public static void main(String[] args) {
 		
 		Vivier vivier = new Vivier();
-			vivier.remplirTuteurCandidat();
-			ArrayList<GroupeTutore> groupe_tutore = new ArrayList<GroupeTutore>();
-			//Instanciation de notre Graphe g1, où l'on ajoutera nos candidats et tutorants en sommets
-			GrapheNonOrienteValue<String> g1 = new GrapheNonOrienteValue(); 
-			//Les futurs abscisses et ordonnées de notre matrice d'adjacence
-			ArrayList<String> l1 = new ArrayList<String>();
-			ArrayList<String> l2 = new ArrayList<String>();
-			//On remplit nos liste
-	        // tri par ordre croissant
-			vivier.triSuppression();
-			tuteurMatriceAdj(vivier.getTuteurs(),l2);
-			tutoreMatriceAdj(vivier.getCandidats(),l1);
-			//Ici, à l'aide d'un double for, nous affectons les poids sur chaques arêtes grâce à notre fonction, pour ensuite faire une affectation de coût minimale
-			AddSommetAffectation(g1,vivier);
-			CalculAffectation ca = new CalculAffectation(g1, l1, l2);
-			List res = ca.getAffectation();
-			System.out.println("\nCouple tuteurs/tutorés");
-			System.out.println(res);
-			System.out.println("Résultat: " + ca.getCout());
-			System.out.println(g1);
-		}
+		vivier.remplirTuteurCandidat();
+		ArrayList<GroupeTutore> groupe_tutore = new ArrayList<GroupeTutore>();
+		//Instanciation de notre Graphe g1, où l'on ajoutera nos candidats et tutorants en sommets
+		GrapheNonOrienteValue<String> g1 = new GrapheNonOrienteValue(); 
+		//Les futurs abscisses et ordonnées de notre matrice d'adjacence
+		ArrayList<String> l1 = new ArrayList<String>();
+		ArrayList<String> l2 = new ArrayList<String>();
+		//On remplit nos liste
+		// tri par ordre croissant
+		vivier.triSuppression();
+		tuteurMatriceAdj(vivier.getTuteurs(),l2);
+		tutoreMatriceAdj(vivier.getCandidats(),l1);
+		//Ici, à l'aide d'un double for, nous affectons les poids sur chaques arêtes grâce à notre fonction, pour ensuite faire une affectation de coût minimale
+		AddSommetAffectation(g1,vivier);
+		CalculAffectation ca = new CalculAffectation(g1, l1, l2);
+		List res = ca.getAffectation();
+		System.out.println("\nCouple tuteurs/tutorés");
+		System.out.println(res);
+		System.out.println("Résultat: " + ca.getCout());
+		System.out.println(g1);
 	}
+}
+

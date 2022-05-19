@@ -70,10 +70,10 @@ public class Vivier {
         final String delimiter = ",";
         try
         {
-            String filePath = "Etudiant.csv";
+            String filePath = "src/Etudiant.csv";
             FileReader fileReader = new FileReader(filePath);
             BufferedReader reader = new BufferedReader(fileReader);
-            while ((line = reader.readLine()) != null)   //jusque la ligne n'est pas à null
+            while ((line = reader.readLine()) != null)   //jusque la ligne n'est pas ï¿½ null
             {
             	String[] token = line.split(delimiter);    // separer par le delimiteur
             	if (Integer.parseInt(token[3])== 1) {
