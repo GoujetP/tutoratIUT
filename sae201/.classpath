@@ -8,8 +8,8 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/5"/>
-	<classpathentry kind="lib" path="/home/infoetu/pierre.goujet.etu/sae201/sae2_02.jar"/>
-	<classpathentry kind="lib" path="/home/infoetu/pierre.goujet.etu/sae201/jheaps-0.13.jar"/>
-	<classpathentry kind="lib" path="/home/infoetu/pierre.goujet.etu/sae201/jgrapht-core-1.5.1.jar"/>
+	<classpathentry kind="lib" path="/home/infoetu/pierre.goujet.etu/sae201/B-G6/sae2_02.jar"/>
+	<classpathentry kind="lib" path="/home/infoetu/pierre.goujet.etu/sae201/B-G6/jheaps-0.13.jar"/>
+	<classpathentry kind="lib" path="/home/infoetu/pierre.goujet.etu/sae201/B-G6/jgrapht-core-1.5.1.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
