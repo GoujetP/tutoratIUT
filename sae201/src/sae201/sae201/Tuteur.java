@@ -10,14 +10,25 @@ public class Tuteur extends Etudiant{
 		this.matiere=matiere;
 	}
 	
-	public Matiere getMatiere() {
-		return this.matiere;
-	}
-
+	
+	
+	
 	@Override
 	public String toString() {
-		return "Tuteur ["+super.toString().substring(10,super.toString().length()-2)+", matiere :"+matiere+", id :"+getId();
+		return "Tuteur ["+super.toString().substring(10,super.toString().length()-1)+", matière:"+matiere+", id:"+getId() + "]";
 	}
+
+
+
+
+	public Matiere getMatiere() {
+		return matiere;
+	}
+
+
+
+
+	
 }
 
 	

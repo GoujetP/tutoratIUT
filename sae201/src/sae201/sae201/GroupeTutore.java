@@ -12,7 +12,7 @@ public class GroupeTutore {
 	private Tuteur tuteur;
 	private Candidat eleve;
 	
-	public GroupeTutore(Tuteur tuteur, Candidat eleve,Vivier vivier) {
+	public GroupeTutore(Tuteur tuteur, Candidat eleve) {
 		this.id = cpt;
 		this.tuteur = tuteur;
 		this.eleve = eleve;
@@ -20,6 +20,11 @@ public class GroupeTutore {
 		
 	}
 	
+	@Override
+	public String toString() {
+		return "Le groupe" +id + ", tuteur=" + tuteur + ", eleve=" + eleve + "]";
+	}
+
 	public GroupeTutore() {
 		this.id=cpt;
 		cpt+=1;

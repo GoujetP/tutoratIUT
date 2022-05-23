@@ -1,10 +1,13 @@
 package sae201;
 
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-
+import fr.ulille.but.sae2_02.graphes.Arete;
 import fr.ulille.but.sae2_02.graphes.CalculAffectation;
 import fr.ulille.but.sae2_02.graphes.GrapheNonOrienteValue;
 
@@ -57,12 +60,11 @@ public class Utilisation {
 	System.out.println("\nCouple tuteurs/tutorés");
 	System.out.println(res);
 	System.out.println("Résultat: " + ca.getCout());
+<<<<<<< HEAD
 	System.out.println(g1);
 	*/
 	
-	public static void remplirVivierMatiere() {
-		
-	}
+	
 	public static void main(String[] args) {
 		Vivier vivier = new Vivier();
 		/*Vivier vivierPOO = new Vivier();
@@ -82,16 +84,45 @@ public class Utilisation {
 		//On remplit nos liste
 		// tri par ordre croissant
 		vivier.triSuppression();
-		tuteurMatriceAdj(vivier.getTuteurs(),l2);
-		tutoreMatriceAdj(vivier.getCandidats(),l1);
+		tuteurMatriceAdj(vivier.getTuteurs(),l1);
+		tutoreMatriceAdj(vivier.getCandidats(),l2);
 		//Ici, à l'aide d'un double for, nous affectons les poids sur chaques arêtes grâce à notre fonction, pour ensuite faire une affectation de coût minimale
 		AddSommetAffectation(g1,vivier);
 		CalculAffectation ca = new CalculAffectation(g1, l1, l2);
-		List res = ca.getAffectation();
+		List<Arete> res = ca.getAffectation();
+		Tuteur t = vivier.getTuteurI(0);
+		Candidat c = vivier.getCandidatI(0);
+		res.get(0).getExtremite1().toString().substring(2);
+		for(int i = 0 ; i < res.size() ; i++ ) {
+			for (int j = 0 ;j < vivier.getTuteurs().size() ; j++) {
+				if (vivier.getTuteurI(j).getId()==Integer.parseInt(res.get(i).getExtremite1().toString().substring(2))){
+					 t = vivier.getTuteurI(j);
+				}
+				if (vivier.getCandidatI(j).getId()==Integer.parseInt(res.get(i).getExtremite2().toString().substring(2))){
+					 c = vivier.getCandidatI(j);
+				}
+			}
+			groupe_tutore.add(new GroupeTutore(t,c));
+			
+				
+		}
+		
+		try (BufferedWriter bw = new BufferedWriter(new FileWriter("/home/infoetu/pierre.goujet.etu/sae201/resultatgroupe.txt"))){
+			for (GroupeTutore s : groupe_tutore) {
+				
+				bw.write(s.toString());
+				bw.newLine();
+			}
+		}
+		catch (IOException ioe) {
+			System.err.println("Erreur ecriture");
+		}
 		System.out.println("\nCouple tuteurs/tutorés");
 		System.out.println(res);
 		System.out.println("Résultat: " + ca.getCout());
 		System.out.println(g1);
+		System.out.println(groupe_tutore);
+		
 	}
 }
 
