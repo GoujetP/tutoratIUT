@@ -38,7 +38,7 @@ public class Utilisation {
 		}
 	}
 	
-	vivier.remplirTuteurCandidat();
+	/*vivier.remplirTuteurCandidat();
 	ArrayList<GroupeTutore> groupe_tutore = new ArrayList<GroupeTutore>();
 	//Instanciation de notre Graphe g1, où l'on ajoutera nos candidats et tutorants en sommets
 	GrapheNonOrienteValue<String> g1 = new GrapheNonOrienteValue(); 
@@ -58,10 +58,20 @@ public class Utilisation {
 	System.out.println(res);
 	System.out.println("Résultat: " + ca.getCout());
 	System.out.println(g1);
+	*/
 	
-	public static void main(String[] args) {
+	public static void remplirVivierMatiere() {
 		
+	}
+	public static void main(String[] args) {
 		Vivier vivier = new Vivier();
+		/*Vivier vivierPOO = new Vivier();
+		Vivier vivierIHM = new Vivier();
+		Vivier vivierBDD = new Vivier();
+		Vivier vivierGRAPHES = new Vivier();
+		Vivier vivierWEB = new Vivier();
+		Vivier vivierBAS_NIVEAU = new Vivier();
+		Vivier vivierSYSTEME = new Vivier();*/
 		vivier.remplirTuteurCandidat();
 		ArrayList<GroupeTutore> groupe_tutore = new ArrayList<GroupeTutore>();
 		//Instanciation de notre Graphe g1, où l'on ajoutera nos candidats et tutorants en sommets
