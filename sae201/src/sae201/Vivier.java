@@ -243,6 +243,31 @@ public class Vivier {
 						tuteursSYSTEME.add(t);
 					}
 				}
+	// A UTLISER SIL Y A UN CANDIDAT EN PLUS PAR RAPPORT AU NOMBRE DE TUTEUR
+	public  void triDupplication(ArrayList<Tuteur> tuteur) {
+					
+
+			int taille = tuteur.size();  
+
+			for (int i = 1; i < taille; i++)
+			{ 
+				double index = tuteur.get(i).getMoyenne();  
+				Tuteur t = tuteur.get(i);  
+				int j = i-1;  
+
+				while(j >= 0 && tuteur.get(j).getMoyenne() > index)  
+				{
+					tuteur.set(j+1,tuteur.get(j));  
+					j--;  
+				}  
+				tuteur.set(j+1, t); 
+			}
+			tuteur.add(tuteur.get(tuteur.size()-1));
+			//jusque la avec supression du surplus
+
+		}
+
+	
 				
 		   
 			
