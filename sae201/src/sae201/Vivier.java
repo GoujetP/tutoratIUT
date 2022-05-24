@@ -6,6 +6,9 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class Vivier {
+	private ArrayList<Tuteur> tuteurs;
+	private ArrayList<Candidat> candidats;
+	
 	private ArrayList<Tuteur> tuteursPOO;
 	private ArrayList<Tuteur> tuteursIHM;
 	private ArrayList<Tuteur> tuteursBDD;
@@ -23,6 +26,8 @@ public class Vivier {
 	private ArrayList<Candidat> candidatsSYSTEME;
 
 	Vivier(){
+		this.candidats=new ArrayList<Candidat>();
+		this.tuteurs=new ArrayList<Tuteur>();
 
 		this.tuteursPOO=new ArrayList<Tuteur>();
 		this.tuteursIHM=new ArrayList<Tuteur>();
@@ -82,9 +87,9 @@ public class Vivier {
 
 	}
 
-	void removeTuteur(int index) {
+	/*void removeTuteur(int index) {
 		this.tuteurs.remove(index);
-	}
+	}*/
 
 	void addCandidat(Candidat c) {
 		if(c.getMatiere().equals(Matiere.POO)) {
@@ -106,7 +111,7 @@ public class Vivier {
 	}
 
 	void removeCandidat(Candidat c) {
-		
+		this.candidats.remove(c);
 		if(c.getMatiere().equals(Matiere.POO)) {
 			this.candidatsPOO.remove(c);
 		}else if(c.getMatiere().equals(Matiere.IHM)) {
@@ -140,17 +145,14 @@ public class Vivier {
 		return this.candidats.get(i);
 	}
 
-	void removeCandidat(Candidat c) {
-		this.candidats.remove(c);
-	}
+	
 
 	void removeCandidat(int index) {
 		this.candidats.remove(index);
 	}
-
+	
 	public void remplirTuteurCandidat() {
-		ArrayList<Candidat> tutore = new ArrayList<Candidat>();
-		ArrayList<Tuteur> tuteur= new ArrayList<Tuteur>();
+		
 		int cpt =0;
 		int cpt_candidat=0;
 		String line;
@@ -175,52 +177,12 @@ public class Vivier {
 
 				if (cpt<cpt_candidat) {
 					Candidat c = new Candidat(token[1],token[0],Integer.parseInt(token[3]), Double.parseDouble(token[2]),Motivation.valueOf(token[5]),Matiere.valueOf(token[4]));
-					if(c.getMatiere().equals("POO")) {
-						candidatsPOO.add(c);
-					}
-					else if(c.getMatiere().equals("IHM")) {
-						candidatsIHM.add(c);
-					}
-					else if(c.getMatiere().equals("BDD")) {
-						candidatsBDD.add(c);
-					}
-					else if(c.getMatiere().equals("GRAPHES")) {
-						candidatsGRAPHES.add(c);
-					}
-					else if(c.getMatiere().equals("WEB")) {
-						candidatsWEB.add(c);
-					}
-					else if(c.getMatiere().equals("BAS_NIVEAU")) {
-						candidatsBAS_NIVEAU.add(c);
-					}
-					else if(c.getMatiere().equals("SYSTEME")) {
-						candidatsSYSTEME.add(c);
-					}
+					this.candidats.add(c);
 				}
 
 				else {
 					Tuteur t = new Tuteur(token[1],token[0], Double.parseDouble(token[2]),Integer.parseInt(token[3]),Matiere.valueOf(token[4]));
-					if(t.getMatiere().equals("POO")) {
-						tuteursPOO.add(t);
-					}
-					else if(t.getMatiere().equals("IHM")) {
-						tuteursIHM.add(t);
-					}
-					else if(t.getMatiere().equals("BDD")) {
-						tuteursBDD.add(t);
-					}
-					else if(t.getMatiere().equals("GRAPHES")) {
-						tuteursGRAPHES.add(t);
-					}
-					else if(t.getMatiere().equals("WEB")) {
-						tuteursWEB.add(t);
-					}
-					else if(t.getMatiere().equals("BAS_NIVEAU")) {
-						tuteursBAS_NIVEAU.add(t);
-					}
-					else if(t.getMatiere().equals("SYSTEME")) {
-						tuteursSYSTEME.add(t);
-					}
+					this.tuteurs.add(t);
 				}
 				cpt++;
 			}    
@@ -230,9 +192,63 @@ public class Vivier {
 		{
 			e.printStackTrace();
 		}
-		this.setCandidats(tutore);
-		this.setTuteurs(tuteur);
+		
 	}
+
+	public void remplirTuteurCandidatParMatiere() {
+			remplirTuteurCandidat();
+			triSuppression();
+			for (Candidat c : this.candidats)
+					if(c.getMatiere().equals(Matiere.POO)) {
+						candidatsPOO.add(c);
+					}
+					else if(c.getMatiere().equals(Matiere.IHM)) {
+						candidatsIHM.add(c);
+					}
+					else if(c.getMatiere().equals(Matiere.BDD)) {
+						candidatsBDD.add(c);
+					}
+					else if(c.getMatiere().equals(Matiere.GRAPHES)) {
+						candidatsGRAPHES.add(c);
+					}
+					else if(c.getMatiere().equals(Matiere.WEB)) {
+						candidatsWEB.add(c);
+					}
+					else if(c.getMatiere().equals(Matiere.BAS_NIVEAU)) {
+						candidatsBAS_NIVEAU.add(c);
+					}
+					else if(c.getMatiere().equals(Matiere.SYSTEME)) {
+						candidatsSYSTEME.add(c);
+					}
+			for (Tuteur t : this.tuteurs)
+					if(t.getMatiere().equals(Matiere.POO)) {
+						tuteursPOO.add(t);
+					}
+					else if(t.getMatiere().equals(Matiere.IHM)) {
+						tuteursIHM.add(t);
+					}
+					else if(t.getMatiere().equals(Matiere.BDD)) {
+						tuteursBDD.add(t);
+					}
+					else if(t.getMatiere().equals(Matiere.GRAPHES)) {
+						tuteursGRAPHES.add(t);
+					}
+					else if(t.getMatiere().equals(Matiere.WEB)) {
+						tuteursWEB.add(t);
+					}
+					else if(t.getMatiere().equals(Matiere.BAS_NIVEAU)) {
+						tuteursBAS_NIVEAU.add(t);
+					}
+					else if(t.getMatiere().equals(Matiere.SYSTEME)) {
+						tuteursSYSTEME.add(t);
+					}
+				}
+				
+		   
+			
+	
+		
+
 
 	public  void triSuppression() {
 		if (getCandidats().size()!=getTuteurs().size()) {			
@@ -260,6 +276,202 @@ public class Vivier {
 
 		}
 
+	}
+
+
+
+
+	public ArrayList<Tuteur> getTuteursPOO() {
+		return tuteursPOO;
+	}
+
+
+
+
+	public void setTuteursPOO(ArrayList<Tuteur> tuteursPOO) {
+		this.tuteursPOO = tuteursPOO;
+	}
+
+
+
+
+	public ArrayList<Tuteur> getTuteursIHM() {
+		return tuteursIHM;
+	}
+
+
+
+
+	public void setTuteursIHM(ArrayList<Tuteur> tuteursIHM) {
+		this.tuteursIHM = tuteursIHM;
+	}
+
+
+
+
+	public ArrayList<Tuteur> getTuteursBDD() {
+		return tuteursBDD;
+	}
+
+
+
+
+	public void setTuteursBDD(ArrayList<Tuteur> tuteursBDD) {
+		this.tuteursBDD = tuteursBDD;
+	}
+
+
+
+
+	public ArrayList<Tuteur> getTuteursGRAPHES() {
+		return tuteursGRAPHES;
+	}
+
+
+
+
+	public void setTuteursGRAPHES(ArrayList<Tuteur> tuteursGRAPHES) {
+		this.tuteursGRAPHES = tuteursGRAPHES;
+	}
+
+
+
+
+	public ArrayList<Tuteur> getTuteursWEB() {
+		return tuteursWEB;
+	}
+
+
+
+
+	public void setTuteursWEB(ArrayList<Tuteur> tuteursWEB) {
+		this.tuteursWEB = tuteursWEB;
+	}
+
+
+
+
+	public ArrayList<Tuteur> getTuteursBAS_NIVEAU() {
+		return tuteursBAS_NIVEAU;
+	}
+
+
+
+
+	public void setTuteursBAS_NIVEAU(ArrayList<Tuteur> tuteursBAS_NIVEAU) {
+		this.tuteursBAS_NIVEAU = tuteursBAS_NIVEAU;
+	}
+
+
+
+
+	public ArrayList<Tuteur> getTuteursSYSTEME() {
+		return tuteursSYSTEME;
+	}
+
+
+
+
+	public void setTuteursSYSTEME(ArrayList<Tuteur> tuteursSYSTEME) {
+		this.tuteursSYSTEME = tuteursSYSTEME;
+	}
+
+
+
+
+	public ArrayList<Candidat> getCandidatsPOO() {
+		return candidatsPOO;
+	}
+
+
+
+
+	public void setCandidatsPOO(ArrayList<Candidat> candidatsPOO) {
+		this.candidatsPOO = candidatsPOO;
+	}
+
+
+
+
+	public ArrayList<Candidat> getCandidatsIHM() {
+		return candidatsIHM;
+	}
+
+
+
+
+	public void setCandidatsIHM(ArrayList<Candidat> candidatsIHM) {
+		this.candidatsIHM = candidatsIHM;
+	}
+
+
+
+
+	public ArrayList<Candidat> getCandidatsBDD() {
+		return candidatsBDD;
+	}
+
+
+
+
+	public void setCandidatsBDD(ArrayList<Candidat> candidatsBDD) {
+		this.candidatsBDD = candidatsBDD;
+	}
+
+
+
+
+	public ArrayList<Candidat> getCandidatsGRAPHES() {
+		return candidatsGRAPHES;
+	}
+
+
+
+
+	public void setCandidatsGRAPHES(ArrayList<Candidat> candidatsGRAPHES) {
+		this.candidatsGRAPHES = candidatsGRAPHES;
+	}
+
+
+
+
+	public ArrayList<Candidat> getCandidatsWEB() {
+		return candidatsWEB;
+	}
+
+
+
+
+	public void setCandidatsWEB(ArrayList<Candidat> candidatsWEB) {
+		this.candidatsWEB = candidatsWEB;
+	}
+
+
+
+
+	public ArrayList<Candidat> getCandidatsBAS_NIVEAU() {
+		return candidatsBAS_NIVEAU;
+	}
+
+
+
+
+	public void setCandidatsBAS_NIVEAU(ArrayList<Candidat> candidatsBAS_NIVEAU) {
+		this.candidatsBAS_NIVEAU = candidatsBAS_NIVEAU;
+	}
+
+
+
+
+	public ArrayList<Candidat> getCandidatsSYSTEME() {
+		return candidatsSYSTEME;
+	}
+
+
+
+
+	public void setCandidatsSYSTEME(ArrayList<Candidat> candidatsSYSTEME) {
+		this.candidatsSYSTEME = candidatsSYSTEME;
 	}
 
 
