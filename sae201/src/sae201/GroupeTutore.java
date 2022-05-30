@@ -1,6 +1,4 @@
-package sae201;
 
-import java.util.ArrayList;
 
 /**
  * @author daniel.fanion.etu
@@ -22,7 +20,7 @@ public class GroupeTutore {
 	
 	@Override
 	public String toString() {
-		return "Le groupe" +id + ", tuteur=" + tuteur + ", eleve=" + eleve + "]";
+		return "Le groupe : " +id + ", tuteur= " + tuteur + ", eleve= " + eleve;
 	}
 
 	public GroupeTutore() {
