@@ -8,9 +8,15 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/5"/>
+<<<<<<< HEAD
 	<classpathentry kind="lib" path="/home/infoetu/daniel.fanion.etu/Sae_S2/B-G6/sae2_02.jar"/>
 	<classpathentry kind="lib" path="/home/infoetu/daniel.fanion.etu/Sae_S2/B-G6/jheaps-0.13.jar"/>
 	<classpathentry kind="lib" path="/home/infoetu/daniel.fanion.etu/Sae_S2/B-G6/jgrapht-core-1.5.1.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/JavaFX"/>
+=======
+	<classpathentry kind="lib" path="/home/infoetu/pierre.goujet.etu/sae201/B-G6/sae201/lib/sae2_02.jar"/>
+	<classpathentry kind="lib" path="/home/infoetu/pierre.goujet.etu/sae201/B-G6/sae201/lib/jheaps-0.13.jar"/>
+	<classpathentry kind="lib" path="/home/infoetu/pierre.goujet.etu/sae201/B-G6/sae201/lib/jgrapht-core-1.5.1.jar"/>
+>>>>>>> 01089d5cdb868005a30d432423a3417ab74b52e3
 	<classpathentry kind="output" path="bin"/>
 </classpath>

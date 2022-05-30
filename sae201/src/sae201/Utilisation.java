@@ -167,11 +167,7 @@ public class Utilisation {
 		ExportGroupeTutoreMatiere(resWEB,vivier.getTuteursWEB(),vivier.getCandidatsWEB());
 		ExportGroupeTutoreMatiere(resBASNIVEAU,vivier.getTuteursBAS_NIVEAU(),vivier.getCandidatsBAS_NIVEAU());
 		ExportGroupeTutoreMatiere(resSYSTEME,vivier.getTuteursSYSTEME(),vivier.getCandidatsSYSTEME());
-		/*System.out.println("\nCouple tuteurs/tutorés");
-		System.out.println(res);
-		System.out.println("Résultat: " + ca.getCout());
-		System.out.println(g1);
-		System.out.println(groupe_tutore);*/
+		System.out.println("Les résultats sont dans le fichier courant.");
 		
 	}
 }
