@@ -1,4 +1,4 @@
 Le groupe20, tuteur=Tuteur [Olivier Gallet:11.3 de moyenne en 3e annee, matière:BAS_NIVEAU, id:48], eleve=Candidat [Agnès Renard:13.2 de moyenne en 1e annee, motivation:TRES_MOTIVE, matière:BAS_NIVEAU, id:25]]
-Le groupe21, tuteur=Tuteur [Daniel Lefebvre:12.9 de moyenne en 3e annee, matière:BAS_NIVEAU, id:51], eleve=Candidat [Édith Pichon:8.8 de moyenne en 1e annee, motivation:PEU_MOTIVE, matière:BAS_NIVEAU, id:24]]
-Le groupe22, tuteur=Tuteur [Inès Gautier:9.3 de moyenne en 3e annee, matière:BAS_NIVEAU, id:49], eleve=Candidat [Céline Perrier:6.4 de moyenne en 1e annee, motivation:SANS_MOTIVATION, matière:BAS_NIVEAU, id:23]]
-Le groupe23, tuteur=Tuteur [Franck Hebert:11.9 de moyenne en 3e annee, matière:BAS_NIVEAU, id:50], eleve=Candidat [Marine Roux:9.1 de moyenne en 1e annee, motivation:MOTIVE, matière:BAS_NIVEAU, id:26]]
+Le groupe21, tuteur=Tuteur [Franck Hebert:11.9 de moyenne en 3e annee, matière:BAS_NIVEAU, id:50], eleve=Candidat [Marine Roux:9.1 de moyenne en 1e annee, motivation:MOTIVE, matière:BAS_NIVEAU, id:26]]
+Le groupe22, tuteur=Tuteur [Daniel Lefebvre:12.9 de moyenne en 3e annee, matière:BAS_NIVEAU, id:51], eleve=Candidat [Édith Pichon:8.8 de moyenne en 1e annee, motivation:PEU_MOTIVE, matière:BAS_NIVEAU, id:24]]
+Le groupe23, tuteur=Tuteur [Inès Gautier:9.3 de moyenne en 3e annee, matière:BAS_NIVEAU, id:49], eleve=Candidat [Céline Perrier:6.4 de moyenne en 1e annee, motivation:SANS_MOTIVATION, matière:BAS_NIVEAU, id:23]]
