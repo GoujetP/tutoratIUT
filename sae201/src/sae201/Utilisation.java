@@ -21,7 +21,6 @@ public class Utilisation {
 			for(int j = 0 ; j < tutore.size() ; j++) {
 				
 				g1.ajouterSommet(tutore.get(j).initiale());
-				//System.out.println(vivier.getTuteurI(i).initiale()+"     "+vivier.getCandidatI(j).initiale()+"     "+((20-vivier.getTuteurI(i).getMoyenne())/vivier.getTuteurI(i).getAnnee()+vivier.getCandidatI(j).getMoyenne()));
 				g1.ajouterArete(tuteur.get(i).initiale(), tutore.get(j).initiale(), ((20-tuteur.get(i).getMoyenne())/tuteur.get(i).getAnnee()+tutore.get(j).getMoyenne()));
 			}
 			
@@ -64,51 +63,24 @@ public class Utilisation {
 				
 		}
 		
-		try (BufferedWriter bw = new BufferedWriter(new FileWriter("./resultatgroupe"+tuteur.get(0).getMatiere()+".txt"))){
+		try (BufferedWriter bw = new BufferedWriter(new FileWriter("./res/groupe"+tuteur.get(0).getMatiere()+".txt"))){
 			for (GroupeTutore s : groupe_tutore) {
 				
 				bw.write(s.toString());
 				bw.newLine();
 			}
+			bw.close();
 		}
 		catch (IOException ioe) {
 			System.err.println("Erreur ecriture");
 		}
 	}
 	
-	/*vivier.remplirTuteurCandidat();
-	ArrayList<GroupeTutore> groupe_tutore = new ArrayList<GroupeTutore>();
-	//Instanciation de notre Graphe g1, où l'on ajoutera nos candidats et tutorants en sommets
-	GrapheNonOrienteValue<String> g1 = new GrapheNonOrienteValue(); 
-	//Les futurs abscisses et ordonnées de notre matrice d'adjacence
-	ArrayList<String> l1 = new ArrayList<String>();
-	ArrayList<String> l2 = new ArrayList<String>();
-	//On remplit nos liste
-	// tri par ordre croissant
-	vivier.triSuppression();
-	tuteurMatriceAdj(vivier.getTuteurs(),l2);
-	tutoreMatriceAdj(vivier.getCandidats(),l1);
-	//Ici, à l'aide d'un double for, nous affectons les poids sur chaques arêtes grâce à notre fonction, pour ensuite faire une affectation de coût minimale
-	AddSommetAffectation(g1,vivier);
-	CalculAffectation ca = new CalculAffectation(g1, l1, l2);
-	List res = ca.getAffectation();
-	System.out.println("\nCouple tuteurs/tutorés");
-	System.out.println(res);
-	System.out.println("Résultat: " + ca.getCout());
-<<<<<<< HEAD
-	System.out.println(g1);
-	*/
+	
 	
 	
 	public static void main(String[] args) {
 		Vivier vivier = new Vivier();
-		/*Vivier vivierPOO = new Vivier();
-		Vivier vivierIHM = new Vivier();
-		Vivier vivierBDD = new Vivier();
-		Vivier vivierGRAPHES = new Vivier();
-		Vivier vivierWEB = new Vivier();
-		Vivier vivierBAS_NIVEAU = new Vivier();
-		Vivier vivierSYSTEME = new Vivier();*/
 		vivier.remplirTuteurCandidatParMatiere();
 		//Instanciation de notre Graphe g1, où l'on ajoutera nos candidats et tutorants en sommets
 		GrapheNonOrienteValue<String> g1 = new GrapheNonOrienteValue();
@@ -119,7 +91,6 @@ public class Utilisation {
 		GrapheNonOrienteValue<String> g6 = new GrapheNonOrienteValue(); 
 		GrapheNonOrienteValue<String> g7 = new GrapheNonOrienteValue(); 
 		//Les futurs abscisses et ordonnées de notre matrice d'adjacence
-		
 		//On remplit nos liste
 		// tri par ordre croissant
 		ArrayList<String> lTPOO = tuteurMatriceAdj(vivier.getTuteursPOO());
@@ -136,8 +107,6 @@ public class Utilisation {
 		ArrayList<String> lCBASNIVEAU = tutoreMatriceAdj(vivier.getCandidatsBAS_NIVEAU());
 		ArrayList<String> lTSYSTEME = tuteurMatriceAdj(vivier.getTuteursSYSTEME());
 		ArrayList<String> lCSYSTEME = tutoreMatriceAdj(vivier.getCandidatsSYSTEME());
-		
-		
 		//Ici, à l'aide d'un double for, nous affectons les poids sur chaques arêtes grâce à notre fonction, pour ensuite faire une affectation de coût minimale
 		AddSommetAffectation(g1,vivier.getTuteursPOO(),vivier.getCandidatsPOO());
 		AddSommetAffectation(g3,vivier.getTuteursBDD(),vivier.getCandidatsBDD());
@@ -160,14 +129,15 @@ public class Utilisation {
 		List<Arete> resWEB = caWEB.getAffectation();
 		List<Arete> resBASNIVEAU = caBASNIVEAU.getAffectation();
 		List<Arete> resSYSTEME = caSYSTEME.getAffectation();
+		ExportGroupeTutoreMatiere(resWEB,vivier.getTuteursWEB(),vivier.getCandidatsWEB());
 		ExportGroupeTutoreMatiere(resPOO,vivier.getTuteursPOO(),vivier.getCandidatsPOO());
 		ExportGroupeTutoreMatiere(resIHM,vivier.getTuteursIHM(),vivier.getCandidatsIHM());
 		ExportGroupeTutoreMatiere(resBDD,vivier.getTuteursBDD(),vivier.getCandidatsBDD());
 		ExportGroupeTutoreMatiere(resGRAPHES,vivier.getTuteursGRAPHES(),vivier.getCandidatsGRAPHES());
-		ExportGroupeTutoreMatiere(resWEB,vivier.getTuteursWEB(),vivier.getCandidatsWEB());
 		ExportGroupeTutoreMatiere(resBASNIVEAU,vivier.getTuteursBAS_NIVEAU(),vivier.getCandidatsBAS_NIVEAU());
 		ExportGroupeTutoreMatiere(resSYSTEME,vivier.getTuteursSYSTEME(),vivier.getCandidatsSYSTEME());
-		System.out.println("Les résultats sont dans le fichier courant.");
+		System.out.println("Les résultats sont dans le fichier res.");
+		
 		
 	}
 }

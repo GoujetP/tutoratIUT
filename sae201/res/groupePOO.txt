@@ -1,0 +1,4 @@
+Le groupe4, tuteur=Tuteur [Maurice Fernandez:5.7 de moyenne en 2e annee, matière:POO, id:31], eleve=Candidat [Hugues Bigot:0.2 de moyenne en 1e annee, motivation:SANS_MOTIVATION, matière:POO, id:3]]
+Le groupe5, tuteur=Tuteur [Joseph Boyer:7.7 de moyenne en 2e annee, matière:POO, id:29], eleve=Candidat [Madeleine Barre:6.9 de moyenne en 1e annee, motivation:PEU_MOTIVE, matière:POO, id:1]]
+Le groupe6, tuteur=Tuteur [François Bertin:13.3 de moyenne en 2e annee, matière:POO, id:28], eleve=Candidat [Sabine Besnard:12.7 de moyenne en 1e annee, motivation:TRES_MOTIVE, matière:POO, id:2]]
+Le groupe7, tuteur=Tuteur [Martin Delmas:11.0 de moyenne en 2e annee, matière:POO, id:30], eleve=Candidat [Claude Allard:9.8 de moyenne en 1e annee, motivation:MOTIVE, matière:POO, id:0]]

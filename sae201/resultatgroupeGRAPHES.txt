@@ -1,4 +1,0 @@
-Le groupe12, tuteur=Tuteur [William Letellier:11.8 de moyenne en 2e annee, matière:GRAPHES, id:36], eleve=Candidat [Jacques Marchand:7.1 de moyenne en 1e annee, motivation:TRES_MOTIVE, matière:GRAPHES, id:17]]
-Le groupe13, tuteur=Tuteur [Gabriel Marin:12.3 de moyenne en 2e annee, matière:GRAPHES, id:37], eleve=Candidat [Odette Lacroix:15.7 de moyenne en 1e annee, motivation:PEU_MOTIVE, matière:GRAPHES, id:16]]
-Le groupe14, tuteur=Tuteur [Christophe Millet:14.2 de moyenne en 2e annee, matière:GRAPHES, id:39], eleve=Candidat [Valérie Jacob:4.7 de moyenne en 1e annee, motivation:SANS_MOTIVATION, matière:GRAPHES, id:15]]
-Le groupe15, tuteur=Tuteur [Nathalie Marion:12.1 de moyenne en 2e annee, matière:GRAPHES, id:38], eleve=Candidat [Honoré Martel:11.7 de moyenne en 1e annee, motivation:MOTIVE, matière:GRAPHES, id:18]]

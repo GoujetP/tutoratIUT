@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class Vivier {
+	
 	private ArrayList<Tuteur> tuteurs;
 	private ArrayList<Candidat> candidats;
 	
@@ -24,6 +25,8 @@ public class Vivier {
 	private ArrayList<Candidat> candidatsWEB;
 	private ArrayList<Candidat> candidatsBAS_NIVEAU;
 	private ArrayList<Candidat> candidatsSYSTEME;
+	
+	
 
 	Vivier(){
 		this.candidats=new ArrayList<Candidat>();
@@ -45,9 +48,6 @@ public class Vivier {
 		this.candidatsBAS_NIVEAU=new ArrayList<Candidat>();
 		this.candidatsSYSTEME=new ArrayList<Candidat>();
 	}
-
-
-
 
 	void addTuteur(Tuteur t) {
 		if(t.getMatiere().equals(Matiere.POO)) {
@@ -86,10 +86,6 @@ public class Vivier {
 		}
 
 	}
-
-	/*void removeTuteur(int index) {
-		this.tuteurs.remove(index);
-	}*/
 
 	void addCandidat(Candidat c) {
 		if(c.getMatiere().equals(Matiere.POO)) {
@@ -130,7 +126,6 @@ public class Vivier {
 
 	}
 
-
 	public ArrayList<Tuteur> getTuteurs() {
 		return tuteurs;
 	}
@@ -145,23 +140,24 @@ public class Vivier {
 		return this.candidats.get(i);
 	}
 
-	
-
 	void removeCandidat(int index) {
 		this.candidats.remove(index);
 	}
 	
 	public void remplirTuteurCandidat() {
-		
 		int cpt =0;
 		int cpt_candidat=0;
 		String line;
 		final String delimiter = ",";
+		
 		try
 		{
+			
 			String filePath = "src/Etudiant.csv";
 			FileReader fileReader = new FileReader(filePath);
+			
 			BufferedReader reader = new BufferedReader(fileReader);
+			
 			while ((line = reader.readLine()) != null)   //jusque la ligne n'est pas � null
 			{
 				String[] token = line.split(delimiter);    // separer par le delimiteur
@@ -172,9 +168,8 @@ public class Vivier {
 			fileReader.close();
 			fileReader= new FileReader(filePath);
 			reader = new BufferedReader(fileReader);
-			while ((line = reader.readLine()) != null){
+			while ((line = reader.readLine()) != null ){
 				String[] token = line.split(delimiter);
-
 				if (cpt<cpt_candidat) {
 					Candidat c = new Candidat(token[1],token[0],Integer.parseInt(token[3]), Double.parseDouble(token[2]),Motivation.valueOf(token[5]),Matiere.valueOf(token[4]));
 					this.candidats.add(c);
@@ -198,45 +193,47 @@ public class Vivier {
 	public void remplirTuteurCandidatParMatiere() {
 			remplirTuteurCandidat();
 			triSuppression();
+			
+			
 			for (Candidat c : this.candidats)
 					if(c.getMatiere().equals(Matiere.POO)) {
 						candidatsPOO.add(c);
 					}
-					else if(c.getMatiere().equals(Matiere.IHM)) {
+					else if(c.getMatiere().equals(Matiere.IHM) ) {
 						candidatsIHM.add(c);
 					}
-					else if(c.getMatiere().equals(Matiere.BDD)) {
+					else if(c.getMatiere().equals(Matiere.BDD) ) {
 						candidatsBDD.add(c);
 					}
-					else if(c.getMatiere().equals(Matiere.GRAPHES)) {
+					else if(c.getMatiere().equals(Matiere.GRAPHES) ) {
 						candidatsGRAPHES.add(c);
 					}
-					else if(c.getMatiere().equals(Matiere.WEB)) {
+					else if(c.getMatiere().equals(Matiere.WEB) ) {
 						candidatsWEB.add(c);
 					}
-					else if(c.getMatiere().equals(Matiere.BAS_NIVEAU)) {
+					else if(c.getMatiere().equals(Matiere.BAS_NIVEAU) ) {
 						candidatsBAS_NIVEAU.add(c);
 					}
 					else if(c.getMatiere().equals(Matiere.SYSTEME)) {
 						candidatsSYSTEME.add(c);
 					}
 			for (Tuteur t : this.tuteurs)
-					if(t.getMatiere().equals(Matiere.POO)) {
+					if(t.getMatiere().equals(Matiere.POO) ) {
 						tuteursPOO.add(t);
 					}
 					else if(t.getMatiere().equals(Matiere.IHM)) {
 						tuteursIHM.add(t);
 					}
-					else if(t.getMatiere().equals(Matiere.BDD)) {
+					else if(t.getMatiere().equals(Matiere.BDD) ) {
 						tuteursBDD.add(t);
 					}
-					else if(t.getMatiere().equals(Matiere.GRAPHES)) {
+					else if(t.getMatiere().equals(Matiere.GRAPHES) ) {
 						tuteursGRAPHES.add(t);
 					}
-					else if(t.getMatiere().equals(Matiere.WEB)) {
+					else if(t.getMatiere().equals(Matiere.WEB) ) {
 						tuteursWEB.add(t);
 					}
-					else if(t.getMatiere().equals(Matiere.BAS_NIVEAU)) {
+					else if(t.getMatiere().equals(Matiere.BAS_NIVEAU) ) {
 						tuteursBAS_NIVEAU.add(t);
 					}
 					else if(t.getMatiere().equals(Matiere.SYSTEME)) {
@@ -246,7 +243,7 @@ public class Vivier {
 	// A UTLISER SIL Y A UN CANDIDAT EN PLUS PAR RAPPORT AU NOMBRE DE TUTEUR
 	public  void triDupplication(ArrayList<Tuteur> tuteur) {
 					
-
+		if (tuteur.size()>0) {
 			int taille = tuteur.size();  
 
 			for (int i = 1; i < taille; i++)
@@ -264,6 +261,7 @@ public class Vivier {
 			}
 			tuteur.add(tuteur.get(tuteur.size()-1));
 			//jusque la avec supression du surplus
+		}
 
 		}
 

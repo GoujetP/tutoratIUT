@@ -1,4 +1,0 @@
-Le groupe4, tuteur=Tuteur [daisy Jacques:11.9 de moyenne en 2e annee, matière:IHM, id:33], eleve=Candidat [Thomas Evrard:8.9 de moyenne en 1e annee, motivation:MOTIVE, matière:IHM, id:10]]
-Le groupe5, tuteur=Tuteur [Thérèse Gay:11.5 de moyenne en 2e annee, matière:IHM, id:32], eleve=Candidat [Amélie Dijoux:9.7 de moyenne en 1e annee, motivation:SANS_MOTIVATION, matière:IHM, id:8]]
-Le groupe6, tuteur=Tuteur [Sabine Leleu:15.8 de moyenne en 2e annee, matière:IHM, id:35], eleve=Candidat [David Colin:7.0 de moyenne en 1e annee, motivation:PEU_MOTIVE, matière:IHM, id:7]]
-Le groupe7, tuteur=Tuteur [Georges Lefebvre:10.4 de moyenne en 2e annee, matière:IHM, id:34], eleve=Candidat [Martin Dijoux:10.1 de moyenne en 1e annee, motivation:TRES_MOTIVE, matière:IHM, id:9]]
