@@ -1,4 +1,4 @@
-package sae201;
+package IHM;
 
 import java.io.IOException;
 import java.net.URL;

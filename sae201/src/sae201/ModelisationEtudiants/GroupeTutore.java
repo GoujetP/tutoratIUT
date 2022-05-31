@@ -1,5 +1,4 @@
-package sae201;
-
+package ModelisationEtudiants;
 
 /**
  * @author daniel.fanion.etu

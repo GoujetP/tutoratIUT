@@ -1,20 +1,19 @@
-package sae201;
+package Graphe;
 import java.util.ArrayList;
 import java.util.List;
 
+import ModelisationEtudiants.Candidat;
+import ModelisationEtudiants.Tuteur;
 import fr.ulille.but.sae2_02.donnees.DonneesPourTester;
 import fr.ulille.but.sae2_02.graphes.CalculAffectation;
 import fr.ulille.but.sae2_02.graphes.GrapheNonOrienteValue;
-import sae201.Candidat;
-import sae201.Tuteur;
-
 import fr.ulille.but.sae2_02.graphes.CalculAffectation;
 import fr.ulille.but.sae2_02.graphes.GrapheNonOrienteValue;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class testAffectation {
+public class PremieresAffectation {
 	
 	public static void main(String[] args) {
 		

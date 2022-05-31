@@ -1,4 +1,4 @@
-Le groupe24, tuteur=Tuteur [Charles Letellier:12.7 de moyenne en 3e annee, matière:SYSTEME, id:52], eleve=Candidat [Hortense Chauveau:9.1 de moyenne en 1e annee, motivation:MOTIVE, matière:SYSTEME, id:6]]
-Le groupe25, tuteur=Tuteur [Josette Nicolas:12.5 de moyenne en 3e annee, matière:SYSTEME, id:54], eleve=Candidat [Anouk Brun:10.5 de moyenne en 1e annee, motivation:TRES_MOTIVE, matière:SYSTEME, id:5]]
-Le groupe26, tuteur=Tuteur [Paul Sanchez:12.0 de moyenne en 3e annee, matière:SYSTEME, id:55], eleve=Candidat [Aurore Schmitt:9.9 de moyenne en 1e annee, motivation:SANS_MOTIVATION, matière:SYSTEME, id:27]]
-Le groupe27, tuteur=Tuteur [Alex Marchand:8.7 de moyenne en 3e annee, matière:SYSTEME, id:53], eleve=Candidat [Alexandria Boulay:12.5 de moyenne en 1e annee, motivation:PEU_MOTIVE, matière:SYSTEME, id:4]]
+Le groupe : 24, tuteur= Tuteur [Josette Nicolas:12.5 de moyenne en 3e annee, matière:SYSTEME, id:54], eleve= Candidat [Anouk Brun:10.5 de moyenne en 1e annee, motivation:TRES_MOTIVE, matière:SYSTEME, id:5]
+Le groupe : 25, tuteur= Tuteur [Alex Marchand:8.7 de moyenne en 3e annee, matière:SYSTEME, id:53], eleve= Candidat [Alexandria Boulay:12.5 de moyenne en 1e annee, motivation:PEU_MOTIVE, matière:SYSTEME, id:4]
+Le groupe : 26, tuteur= Tuteur [Charles Letellier:12.7 de moyenne en 3e annee, matière:SYSTEME, id:52], eleve= Candidat [Hortense Chauveau:9.1 de moyenne en 1e annee, motivation:MOTIVE, matière:SYSTEME, id:6]
+Le groupe : 27, tuteur= Tuteur [Paul Sanchez:12.0 de moyenne en 3e annee, matière:SYSTEME, id:55], eleve= Candidat [Aurore Schmitt:9.9 de moyenne en 1e annee, motivation:SANS_MOTIVATION, matière:SYSTEME, id:27]

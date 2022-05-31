@@ -3,16 +3,16 @@ package test;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import ModelisationEtudiants.Candidat;
+import ModelisationEtudiants.Etudiant;
+import ModelisationEtudiants.Matiere;
+import ModelisationEtudiants.Motivation;
+import ModelisationEtudiants.Tuteur;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-
-import sae201.Etudiant;
-import sae201.Matiere;
-import sae201.Motivation;
-import sae201.Candidat;
-import sae201.Tuteur;
 
 public class EtudiantTest {
 	public Etudiant etu1;

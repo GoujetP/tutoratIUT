@@ -1,4 +1,4 @@
-package sae201;
+package ModelisationEtudiants;
 
 public class Tuteur extends Etudiant{
 	

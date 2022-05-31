@@ -5,10 +5,10 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import sae201.Candidat;
-import sae201.GroupeTutore;
-import sae201.Matiere;
-import sae201.Tuteur;
+import ModelisationEtudiants.Candidat;
+import ModelisationEtudiants.GroupeTutore;
+import ModelisationEtudiants.Matiere;
+import ModelisationEtudiants.Tuteur;
 
 public class GroupeTest {
 	

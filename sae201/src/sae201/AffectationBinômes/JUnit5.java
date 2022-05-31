@@ -1,4 +1,4 @@
-package sae201;
+package AffectationBinômes;
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;

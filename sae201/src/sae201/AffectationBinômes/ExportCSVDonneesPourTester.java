@@ -1,4 +1,4 @@
-package sae201;
+package AffectationBinômes;
 
 import java.io.FileWriter;
 import java.util.ArrayList;

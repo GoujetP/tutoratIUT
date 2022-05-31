@@ -1,20 +1,18 @@
-package sae201;
-
-
-
+package AffectationBinômes;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import ModelisationEtudiants.Candidat;
+import ModelisationEtudiants.GroupeTutore;
+import ModelisationEtudiants.Tuteur;
 import fr.ulille.but.sae2_02.graphes.Arete;
 import fr.ulille.but.sae2_02.graphes.CalculAffectation;
 import fr.ulille.but.sae2_02.graphes.GrapheNonOrienteValue;
 
-public class Utilisation {
-	
-	
+public class Affectation {
 	public static void AddSommetAffectation(GrapheNonOrienteValue<String> g1 , ArrayList<Tuteur> tuteur , ArrayList<Candidat> tutore) {
 		for(int i = 0 ; i < tuteur.size() ; i++) {
 			Tuteur  t =tuteur.get(i);

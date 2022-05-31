@@ -1,4 +1,4 @@
-Le groupe12, tuteur=Tuteur [Jacqueline Pons:13.2 de moyenne en 2e annee, matière:BDD, id:42], eleve=Candidat [Guillaume Hamel:5.5 de moyenne en 1e annee, motivation:SANS_MOTIVATION, matière:BDD, id:14]]
-Le groupe13, tuteur=Tuteur [Vincent Muller:9.3 de moyenne en 2e annee, matière:BDD, id:41], eleve=Candidat [Éléonore Guillou:13.1 de moyenne en 1e annee, motivation:PEU_MOTIVE, matière:BDD, id:13]]
-Le groupe14, tuteur=Tuteur [Pénélope Renault:13.2 de moyenne en 2e annee, matière:BDD, id:43], eleve=Candidat [Émile Guerin:4.8 de moyenne en 1e annee, motivation:MOTIVE, matière:BDD, id:12]]
-Le groupe15, tuteur=Tuteur [Henri Moreno:10.8 de moyenne en 2e annee, matière:BDD, id:40], eleve=Candidat [Guy Goncalves:0.5 de moyenne en 1e annee, motivation:TRES_MOTIVE, matière:BDD, id:11]]
+Le groupe : 12, tuteur= Tuteur [Jacqueline Pons:13.2 de moyenne en 2e annee, matière:BDD, id:42], eleve= Candidat [Guillaume Hamel:5.5 de moyenne en 1e annee, motivation:SANS_MOTIVATION, matière:BDD, id:14]
+Le groupe : 13, tuteur= Tuteur [Pénélope Renault:13.2 de moyenne en 2e annee, matière:BDD, id:43], eleve= Candidat [Émile Guerin:4.8 de moyenne en 1e annee, motivation:MOTIVE, matière:BDD, id:12]
+Le groupe : 14, tuteur= Tuteur [Vincent Muller:9.3 de moyenne en 2e annee, matière:BDD, id:41], eleve= Candidat [Éléonore Guillou:13.1 de moyenne en 1e annee, motivation:PEU_MOTIVE, matière:BDD, id:13]
+Le groupe : 15, tuteur= Tuteur [Henri Moreno:10.8 de moyenne en 2e annee, matière:BDD, id:40], eleve= Candidat [Guy Goncalves:0.5 de moyenne en 1e annee, motivation:TRES_MOTIVE, matière:BDD, id:11]

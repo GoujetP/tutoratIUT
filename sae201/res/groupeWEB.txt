@@ -1,4 +1,4 @@
-Le groupe0, tuteur=Tuteur [Nicolas Roche:13.1 de moyenne en 2e annee, matière:WEB, id:44], eleve=Candidat [Thierry Moreno:1.4 de moyenne en 1e annee, motivation:TRES_MOTIVE, matière:WEB, id:19]]
-Le groupe1, tuteur=Tuteur [Sophie Vallee:15.8 de moyenne en 2e annee, matière:WEB, id:46], eleve=Candidat [Paulette Muller:7.5 de moyenne en 1e annee, motivation:PEU_MOTIVE, matière:WEB, id:20]]
-Le groupe2, tuteur=Tuteur [Édouard Auger:13.9 de moyenne en 3e annee, matière:WEB, id:47], eleve=Candidat [Théodore Payet:2.1 de moyenne en 1e annee, motivation:MOTIVE, matière:WEB, id:22]]
-Le groupe3, tuteur=Tuteur [Juliette Traore:9.8 de moyenne en 2e annee, matière:WEB, id:45], eleve=Candidat [Camille Pascal:12.8 de moyenne en 1e annee, motivation:SANS_MOTIVATION, matière:WEB, id:21]]
+Le groupe : 0, tuteur= Tuteur [Sophie Vallee:15.8 de moyenne en 2e annee, matière:WEB, id:46], eleve= Candidat [Paulette Muller:7.5 de moyenne en 1e annee, motivation:PEU_MOTIVE, matière:WEB, id:20]
+Le groupe : 1, tuteur= Tuteur [Édouard Auger:13.9 de moyenne en 3e annee, matière:WEB, id:47], eleve= Candidat [Théodore Payet:2.1 de moyenne en 1e annee, motivation:MOTIVE, matière:WEB, id:22]
+Le groupe : 2, tuteur= Tuteur [Nicolas Roche:13.1 de moyenne en 2e annee, matière:WEB, id:44], eleve= Candidat [Thierry Moreno:1.4 de moyenne en 1e annee, motivation:TRES_MOTIVE, matière:WEB, id:19]
+Le groupe : 3, tuteur= Tuteur [Juliette Traore:9.8 de moyenne en 2e annee, matière:WEB, id:45], eleve= Candidat [Camille Pascal:12.8 de moyenne en 1e annee, motivation:SANS_MOTIVATION, matière:WEB, id:21]

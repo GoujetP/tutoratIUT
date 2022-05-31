@@ -1,9 +1,14 @@
-package sae201;
+package AffectationBinômes;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+
+import ModelisationEtudiants.Candidat;
+import ModelisationEtudiants.Matiere;
+import ModelisationEtudiants.Motivation;
+import ModelisationEtudiants.Tuteur;
 
 public class Vivier {
 	
@@ -153,7 +158,7 @@ public class Vivier {
 		try
 		{
 			
-			String filePath = "src/Etudiant.csv";
+			String filePath = "Etudiant.csv";
 			FileReader fileReader = new FileReader(filePath);
 			
 			BufferedReader reader = new BufferedReader(fileReader);

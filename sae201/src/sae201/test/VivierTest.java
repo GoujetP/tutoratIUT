@@ -17,6 +17,6 @@ public class VivierTest {
 	
 	@Test 
 	void testToString() {
-		assertEquals();
+	//	assertEquals();
 	}
 }
