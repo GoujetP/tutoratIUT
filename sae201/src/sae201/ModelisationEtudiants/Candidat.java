@@ -19,6 +19,11 @@ public class Candidat extends Etudiant {
 		this.motivation = Motivation.PEU_MOTIVE;
 		this.matiere=matiere;
 	}
+	
+	public Candidat(String nom, String prenom,int annee,double moyenne) {
+		super(nom, prenom, annee, moyenne);
+		this.motivation = Motivation.PEU_MOTIVE;
+	}
 
 	public Motivation isMotivation() {
 		return motivation;

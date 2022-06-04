@@ -53,7 +53,7 @@ public class PremieresAffectation {
 
 		//On remplit nos listes
 		for(int i = 0 ; i < 5; i++){
-			Candidat  c = new Candidat(tutore[i][1],tutore[i][0],Double.parseDouble(tutore[i][2]),Integer.parseInt(tutore[i][3]));
+			Candidat  c = new Candidat(tutore[i][1],tutore[i][0],Integer.parseInt(tutore[i][3]),Double.parseDouble(tutore[i][2]));
 			g1.ajouterSommet(c.initiale());
 			l1.add(c.initiale());
 			cand.add(c);

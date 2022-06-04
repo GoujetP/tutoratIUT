@@ -1,4 +1,4 @@
-package AffectationBinômes;
+package AffectationBinomes;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;

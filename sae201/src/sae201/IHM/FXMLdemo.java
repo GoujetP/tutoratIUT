@@ -12,7 +12,7 @@ public class FXMLdemo extends Application {
 
     public void start(Stage stage) throws IOException {
             FXMLLoader loader = new FXMLLoader();
-            URL fxmlFileUrl = getClass().getResource("../interface.fxml");
+            URL fxmlFileUrl = getClass().getResource("interface.fxml");
             if (fxmlFileUrl == null) {
                     System.out.println("Impossible de charger le fichier fxml");
                     System.exit(-1);
@@ -24,6 +24,7 @@ public class FXMLdemo extends Application {
             stage.setScene(scene);
             stage.setTitle("FXML demo");
             stage.show();
+            
     }
 
     public static void main(String[] args) {

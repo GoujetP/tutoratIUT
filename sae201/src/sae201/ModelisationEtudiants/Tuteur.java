@@ -11,6 +11,12 @@ public class Tuteur extends Etudiant{
 	}
 	
 	
+	public Tuteur(String nom, String prenom,double moyenne, int annee) {
+		super(nom, prenom, annee, moyenne);
+		// TODO Auto-generated constructor stub
+	}
+	
+	
 	
 	
 	@Override
