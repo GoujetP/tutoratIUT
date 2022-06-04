@@ -33,7 +33,7 @@ public class Vivier {
 	
 	
 
-	Vivier(){
+	public Vivier(){
 		this.candidats=new ArrayList<Candidat>();
 		this.tuteurs=new ArrayList<Tuteur>();
 

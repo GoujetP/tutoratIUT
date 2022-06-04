@@ -21,7 +21,7 @@ public class Tuteur extends Etudiant{
 	
 	@Override
 	public String toString() {
-		return "Tuteur ["+super.toString().substring(10,super.toString().length()-1)+", matière:"+matiere+", id:"+getId() + "]";
+		return ""+super.toString().substring(10,super.toString().length()-1)+" - "+getId() ;
 	}
 
 

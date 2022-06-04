@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.RadioButton?>
@@ -9,15 +10,14 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Line?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="594.0" prefWidth="892.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="594.0" prefWidth="892.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="IHM.Controller">
    <children>
       <HBox prefHeight="594.0" prefWidth="892.0">
          <children>
             <HBox prefHeight="594.0" prefWidth="400.0">
                <children>
-                  <ListView prefHeight="200.0" prefWidth="200.0" />
-                  <ListView prefHeight="200.0" prefWidth="200.0" />
+                  <ListView fx:id="l_tutore" prefHeight="200.0" prefWidth="200.0" />
+                  <ListView fx:id="l_tuteur" onEditStart="#remplir" prefHeight="200.0" prefWidth="200.0" />
                </children>
             </HBox>
             <VBox prefHeight="594.0" prefWidth="495.0">
@@ -28,7 +28,7 @@
                            <children>
                               <Label prefHeight="3.0" prefWidth="250.0" text="Tutoré" />
                               <Line endX="-99.2005615234375" endY="-385.1337585449219" startX="-357.9006042480469" startY="-385.3408508300781" />
-                              <Label prefHeight="305.0" prefWidth="248.0" text="Infos" />
+                              <Label fx:id="info_tutore" prefHeight="305.0" prefWidth="248.0" text="Infos" />
                            </children>
                         </VBox>
                         <Line endX="-100.20706176757812" endY="328.89288330078125" startX="-100.0" />
@@ -36,7 +36,7 @@
                            <children>
                               <Label prefHeight="3.0" prefWidth="250.0" text="Tuteur" />
                               <Line endX="-99.2005615234375" endY="-385.1337585449219" startX="-357.9006042480469" startY="-385.3408508300781" />
-                              <Label prefHeight="305.0" prefWidth="248.0" text="Infos" />
+                              <Label fx:id="infos_tuteur" prefHeight="305.0" prefWidth="248.0" text="Infos" />
                            </children>
                         </VBox>
                      </children>
@@ -45,17 +45,18 @@
                   <HBox prefHeight="22.0" prefWidth="524.0">
                      <children>
                         <Label prefHeight="18.0" prefWidth="144.0" text="Crtières de pondération :" />
-                        <RadioButton mnemonicParsing="false" text="3ème année" />
-                        <RadioButton mnemonicParsing="false" text="2ème année" />
+                        <RadioButton fx:id="pond_3a" mnemonicParsing="false" text="3ème année" />
+                        <RadioButton fx:id="pond_2a" mnemonicParsing="false" text="2ème année" />
                      </children>
                   </HBox>
                   <Line endX="428.89288330078125" endY="-0.20710676908493042" startX="-100.0" />
                   <AnchorPane prefHeight="238.0" prefWidth="524.0">
                      <children>
-                        <Button layoutX="193.0" layoutY="14.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="146.0" text="Supprimer le tutoré" />
-                        <Button layoutX="193.0" layoutY="67.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="146.0" text="Supprimer le couple" />
-                        <Button layoutX="193.0" layoutY="119.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="146.0" text="Créer une affection" />
-                        <Button layoutX="193.0" layoutY="172.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="146.0" text="Affectation automatique" />
+                        <Button fx:id="bsupp_tutore" layoutX="193.0" layoutY="14.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="146.0" text="Supprimer le tutoré" />
+                        <Button fx:id="bsupp_couple" layoutX="193.0" layoutY="67.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="146.0" text="Supprimer le couple" />
+                        <Button fx:id="add_aff" layoutX="193.0" layoutY="119.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="146.0" text="Créer une affection" />
+                        <Button fx:id="auto_aff" layoutX="193.0" layoutY="172.0" mnemonicParsing="false" onAction="#remplir" prefHeight="51.0" prefWidth="146.0" text="Affectation automatique" />
+                        <ComboBox fx:id="matiere" layoutX="14.0" layoutY="27.0" prefWidth="150.0" />
                      </children>
                   </AnchorPane>
                </children>
