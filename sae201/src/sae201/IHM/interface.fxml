@@ -17,7 +17,7 @@
             <HBox prefHeight="594.0" prefWidth="400.0">
                <children>
                   <ListView fx:id="l_tutore" prefHeight="200.0" prefWidth="200.0" />
-                  <ListView fx:id="l_tuteur" onEditStart="#remplir" prefHeight="200.0" prefWidth="200.0" />
+                  <ListView fx:id="l_tuteur" prefHeight="200.0" prefWidth="200.0" />
                </children>
             </HBox>
             <VBox prefHeight="594.0" prefWidth="495.0">
