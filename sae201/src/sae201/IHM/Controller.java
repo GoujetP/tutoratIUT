@@ -16,6 +16,7 @@ import fr.ulille.but.sae2_02.graphes.Arete;
 import fr.ulille.but.sae2_02.graphes.CalculAffectation;
 import fr.ulille.but.sae2_02.graphes.GrapheNonOrienteValue;
 import javafx.collections.FXCollections;
+import javafx.collections.ListChangeListener;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -25,6 +26,88 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.RadioButton;
 
 public class Controller {
+	private int indexList;
+	class TutoreInfoListener implements ListChangeListener<String> {
+	    public void onChanged(Change<? extends String> report) {
+	    	ArrayList<GroupeTutore > g ;
+	    	String verif;
+	    	if (!matiere.getValue().equals(null) && matiere.getValue().equals("POO")) {
+				g=gt2;
+			}
+			else if (matiere.getValue().equals("IHM")) {
+				g=gt3;
+			}
+			else if (matiere.getValue().equals("BDD")) {
+				g=gt4;
+			}
+			else if (matiere.getValue().equals("WEB")) {
+				g=gt1;
+			}
+			else if (matiere.getValue().equals("GRAPHES")) {
+				g=gt5;
+			}
+			else if (matiere.getValue().equals("BAS_NIVEAU")) {
+				g=gt6;
+			}
+			else  {
+				g=gt7;
+			}
+	    	indexList = l_tutore.getSelectionModel().getSelectedIndex();
+	    	verif = l_tutore.getSelectionModel().getSelectedItem();
+	    	GroupeTutore groupe = g.get(0);
+	    	for (GroupeTutore gr : g) {
+	    		if (gr.getEleve().toString().equals(verif) && gr.getTuteur().toString().equals(l_tuteur.getItems().get(indexList))) {
+	    			groupe=gr;
+	    			break;
+	    		}
+	    	}
+	    	String res = "ID : "+groupe.getTuteur().getId()+"\n"+"Nom : "+groupe.getTuteur().getNom()+"\n"+"Prénom :"+groupe.getTuteur().getPrenom()+"\n"+"Moyenne "+groupe.getTuteur().getMoyenne();
+	      infos_tuteur.setText(res );
+	      res="ID : "+groupe.getEleve().getId()+"\n"+"Nom : "+groupe.getEleve().getNom()+"\n"+"Prénom :"+groupe.getEleve().getPrenom()+"\n"+"Moyenne "+groupe.getEleve().getMoyenne();
+	      info_tutore.setText(res);
+	    }
+	  }
+	class TuteurInfoListener implements ListChangeListener<String> {
+	    public void onChanged(Change<? extends String> report) {
+	    	ArrayList<GroupeTutore > g ;
+	    	String verif;
+	    	if (!matiere.getValue().equals(null) && matiere.getValue().equals("POO")) {
+				g=gt2;
+			}
+			else if (matiere.getValue().equals("IHM")) {
+				g=gt3;
+			}
+			else if (matiere.getValue().equals("BDD")) {
+				g=gt4;
+			}
+			else if (matiere.getValue().equals("WEB")) {
+				g=gt1;
+			}
+			else if (matiere.getValue().equals("GRAPHES")) {
+				g=gt5;
+			}
+			else if (matiere.getValue().equals("BAS_NIVEAU")) {
+				g=gt6;
+			}
+			else  {
+				g=gt7;
+			}
+	    	indexList = l_tuteur.getSelectionModel().getSelectedIndex();
+	    	verif = l_tuteur.getSelectionModel().getSelectedItem();
+	    	GroupeTutore groupe = g.get(0);
+	    	for (GroupeTutore gr : g) {
+	    		if (gr.getTuteur().toString().equals(verif) && gr.getEleve().toString().equals(l_tutore.getItems().get(indexList))) {
+	    			groupe=gr;
+	    			break;
+	    		}
+	    	}
+	    	String res = "ID : "+groupe.getTuteur().getId()+"\n"+"Nom : "+groupe.getTuteur().getNom()+"\n"+"Prénom :"+groupe.getTuteur().getPrenom()+"\n"+"Moyenne "+groupe.getTuteur().getMoyenne();
+	      infos_tuteur.setText(res );
+	      res="ID : "+groupe.getEleve().getId()+"\n"+"Nom : "+groupe.getEleve().getNom()+"\n"+"Prénom :"+groupe.getEleve().getPrenom()+"\n"+"Moyenne "+groupe.getEleve().getMoyenne();
+	      info_tutore.setText(res);
+	    }
+	  }
+
 	public static ArrayList<GroupeTutore> ExportGroupeTutoreMatiere(List<Arete> res , ArrayList<Tuteur> tuteur , ArrayList<Candidat> tutore ) {
 		ArrayList<GroupeTutore> groupe_tutore = new ArrayList<GroupeTutore>();
 		Tuteur t = tuteur.get(0);
@@ -218,7 +301,8 @@ public class Controller {
     
     public void initialize() {
     	matiere.setItems(FXCollections.observableArrayList("POO","IHM","BDD","GRAPHES","WEB","BAS_NIVEAU","SYSTEME"));
-    	
+    	l_tutore.getSelectionModel().getSelectedItems().addListener( new TutoreInfoListener() );
+    	l_tuteur.getSelectionModel().getSelectedItems().addListener(new	 TuteurInfoListener());
     }
     
     
@@ -253,6 +337,7 @@ public class Controller {
 		else if (matiere.getValue().equals("SYSTEME")) {
 			addListe(gt7);
 		}
+		
     }
 
 }
