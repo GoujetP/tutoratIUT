@@ -3,8 +3,10 @@ package IHM;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.ResourceBundle;
 
 import AffectationBinomes.Vivier;
 import ModelisationEtudiants.Candidat;
@@ -13,6 +15,7 @@ import ModelisationEtudiants.Tuteur;
 import fr.ulille.but.sae2_02.graphes.Arete;
 import fr.ulille.but.sae2_02.graphes.CalculAffectation;
 import fr.ulille.but.sae2_02.graphes.GrapheNonOrienteValue;
+import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -26,7 +29,6 @@ public class Controller {
 		ArrayList<GroupeTutore> groupe_tutore = new ArrayList<GroupeTutore>();
 		Tuteur t = tuteur.get(0);
 		Candidat c = tutore.get(0);
-		res.get(0).getExtremite1().toString().substring(2);
 		for(int i = 0 ; i < res.size() ; i++ ) {
 			for (int j = 0 ;j < tuteur.size() ; j++) {
 				if (tuteur.get(j).getId()==Integer.parseInt(res.get(i).getExtremite1().toString().substring(2))){
@@ -76,7 +78,8 @@ public class Controller {
 
     @FXML
     private Button add_aff;
-
+    @FXML
+    private Button valider;
     @FXML
     private Button auto_aff;
 
@@ -106,12 +109,25 @@ public class Controller {
 
     @FXML
     private RadioButton pond_3a;
-    private int cpt = 0;
+    
+    ArrayList<GroupeTutore> gt1 ;
+	ArrayList<GroupeTutore> gt2 ;
+	ArrayList<GroupeTutore> gt3;
+	ArrayList<GroupeTutore> gt4 ;
+	ArrayList<GroupeTutore> gt5 ;
+	ArrayList<GroupeTutore> gt6 ;
+	ArrayList<GroupeTutore> gt7;
+    private int cpt;
     void addListe(ArrayList<GroupeTutore> g) {
+    	cpt=0;
+    	ArrayList<String> doublon = new ArrayList<String>();
     	for (GroupeTutore gr : g) {
+    		if (!doublon.contains(gr.getEleve().toString()) && !doublon.contains(gr.getTuteur().toString())){
     		l_tutore.getItems().add(cpt, gr.getEleve().toString());
     		l_tuteur.getItems().add(cpt, gr.getTuteur().toString());
     		cpt++;
+    		doublon.add( gr.getEleve().toString());
+    		doublon.add( gr.getTuteur().toString());}
     	}
     }
     
@@ -162,13 +178,13 @@ public class Controller {
 		List<Arete> resWEB = caWEB.getAffectation();
 		List<Arete> resBASNIVEAU = caBASNIVEAU.getAffectation();
 		List<Arete> resSYSTEME = caSYSTEME.getAffectation();
-		ArrayList<GroupeTutore> gt1 = ExportGroupeTutoreMatiere(resWEB,vivier.getTuteursWEB(),vivier.getCandidatsWEB());
-		ArrayList<GroupeTutore> gt2 =ExportGroupeTutoreMatiere(resPOO,vivier.getTuteursPOO(),vivier.getCandidatsPOO());
-		ArrayList<GroupeTutore> gt3 =ExportGroupeTutoreMatiere(resIHM,vivier.getTuteursIHM(),vivier.getCandidatsIHM());
-		ArrayList<GroupeTutore> gt4 =ExportGroupeTutoreMatiere(resBDD,vivier.getTuteursBDD(),vivier.getCandidatsBDD());
-		ArrayList<GroupeTutore> gt5 =ExportGroupeTutoreMatiere(resGRAPHES,vivier.getTuteursGRAPHES(),vivier.getCandidatsGRAPHES());
-		ArrayList<GroupeTutore> gt6 =ExportGroupeTutoreMatiere(resBASNIVEAU,vivier.getTuteursBAS_NIVEAU(),vivier.getCandidatsBAS_NIVEAU());
-		ArrayList<GroupeTutore> gt7 =ExportGroupeTutoreMatiere(resSYSTEME,vivier.getTuteursSYSTEME(),vivier.getCandidatsSYSTEME());
+		 gt1 = ExportGroupeTutoreMatiere(resWEB,vivier.getTuteursWEB(),vivier.getCandidatsWEB());
+		 gt2 =ExportGroupeTutoreMatiere(resPOO,vivier.getTuteursPOO(),vivier.getCandidatsPOO());
+		 gt3 =ExportGroupeTutoreMatiere(resIHM,vivier.getTuteursIHM(),vivier.getCandidatsIHM());
+		 gt4 =ExportGroupeTutoreMatiere(resBDD,vivier.getTuteursBDD(),vivier.getCandidatsBDD());
+		 gt5 =ExportGroupeTutoreMatiere(resGRAPHES,vivier.getTuteursGRAPHES(),vivier.getCandidatsGRAPHES());
+		 gt6 =ExportGroupeTutoreMatiere(resBASNIVEAU,vivier.getTuteursBAS_NIVEAU(),vivier.getCandidatsBAS_NIVEAU());
+		 gt7 =ExportGroupeTutoreMatiere(resSYSTEME,vivier.getTuteursSYSTEME(),vivier.getCandidatsSYSTEME());
 		addListe(gt1);
 		addListe(gt2);
 		addListe(gt3);
@@ -178,6 +194,7 @@ public class Controller {
 		addListe(gt7);
     }
     private Vivier vivier;
+    
     boolean deja_fait=false;
     
     
@@ -196,9 +213,46 @@ public class Controller {
     	vivier.remplirTuteurCandidatParMatiere();
     	affectation(vivier);
 		deja_fait=true;
+    }
+    
+    
+    public void initialize() {
+    	matiere.setItems(FXCollections.observableArrayList("POO","IHM","BDD","GRAPHES","WEB","BAS_NIVEAU","SYSTEME"));
+    	
+    }
+    
+    
+    public void affParMatiere() {
+    	vivier = new Vivier();
+    	vivier.remplirTuteurCandidat();
+    	vivier.remplirTuteurCandidatParMatiere();
+    	affectation(vivier);
+    	l_tuteur.getItems().removeAll();
+		l_tutore.getItems().removeAll();
+		l_tuteur.getItems().clear();
+		l_tutore.getItems().clear();
 		
-		
-		
+		if (!matiere.getValue().equals(null) && matiere.getValue().equals("POO")) {
+			addListe(gt2);
+		}
+		else if (matiere.getValue().equals("IHM")) {
+			addListe(gt3);
+		}
+		else if (matiere.getValue().equals("BDD")) {
+			addListe(gt4);
+		}
+		else if (matiere.getValue().equals("WEB")) {
+			addListe(gt1);
+		}
+		else if (matiere.getValue().equals("GRAPHES")) {
+			addListe(gt5);
+		}
+		else if (matiere.getValue().equals("BAS_NIVEAU")) {
+			addListe(gt6);
+		}
+		else if (matiere.getValue().equals("SYSTEME")) {
+			addListe(gt7);
+		}
     }
 
 }

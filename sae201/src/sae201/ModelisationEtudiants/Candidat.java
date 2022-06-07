@@ -34,7 +34,7 @@ public class Candidat extends Etudiant {
 	}
 
 	public String toString() {
-		return getId()+" ."+getNom()+" "+getPrenom() ;
+		return getNom()+" "+getPrenom() ;
 	}
 	
 	public Matiere getMatiere() {

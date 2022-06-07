@@ -11,6 +11,7 @@ import javafx.stage.Stage;
 public class FXMLdemo extends Application {
 
     public void start(Stage stage) throws IOException {
+    		
             FXMLLoader loader = new FXMLLoader();
             URL fxmlFileUrl = getClass().getResource("interface.fxml");
             if (fxmlFileUrl == null) {
@@ -19,10 +20,9 @@ public class FXMLdemo extends Application {
             }
             loader.setLocation(fxmlFileUrl);
             Parent root = loader.load();
-
             Scene scene = new Scene(root);
             stage.setScene(scene);
-            stage.setTitle("FXML demo");
+            stage.setTitle("Tutorat");
             stage.show();
             
     }
