@@ -53,7 +53,7 @@
                   <AnchorPane prefHeight="238.0" prefWidth="524.0">
                      <children>
                         <Button fx:id="bsupp_tutore" layoutX="193.0" layoutY="14.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="146.0" text="Supprimer le tutoré" />
-                        <Button fx:id="bsupp_couple" layoutX="193.0" layoutY="67.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="146.0" text="Supprimer le couple" />
+                        <Button fx:id="bsupp_couple" layoutX="193.0" layoutY="67.0" mnemonicParsing="false" onAction="#suppCouple" prefHeight="51.0" prefWidth="146.0" text="Supprimer le couple" />
                         <Button fx:id="add_aff" layoutX="193.0" layoutY="119.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="146.0" text="Créer une affection" />
                         <Button fx:id="auto_aff" layoutX="193.0" layoutY="172.0" mnemonicParsing="false" onAction="#remplir" prefHeight="51.0" prefWidth="146.0" text="Affectation automatique" />
                         <ComboBox fx:id="matiere" layoutX="14.0" layoutY="27.0" prefWidth="150.0" />
