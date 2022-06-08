@@ -27,7 +27,8 @@ import javafx.scene.control.RadioButton;
 
 public class Controller {
 	private int indexList;
-	private ArrayList<String> supp=new ArrayList<String>();
+	private ArrayList<String> suppTutore=new ArrayList<String>();
+	private ArrayList<String> suppTuteur=new ArrayList<String>();
 	class TutoreInfoListener implements ListChangeListener<String> {
 	    public void onChanged(Change<? extends String> report) {
 	    	ArrayList<GroupeTutore > g ;
@@ -179,8 +180,6 @@ public class Controller {
     @FXML
     private Button bsupp_couple;
 
-    @FXML
-    private Button bsupp_tutore;
 
     @FXML
     private Label info_tutore;
@@ -215,7 +214,7 @@ public class Controller {
     	cpt=0;
     	ArrayList<String> doublon = new ArrayList<String>();
     	for (GroupeTutore gr : g) {
-    		if (!doublon.contains(gr.getEleve().toString()) && !doublon.contains(gr.getTuteur().toString()) && !supp.contains(gr.getEleve().toString()) && !supp.contains(gr.getTuteur().toString())){
+    		if (!doublon.contains(gr.getEleve().toString()) && !doublon.contains(gr.getTuteur().toString()) && !suppTutore.contains(gr.getEleve().toString()) && !suppTuteur.contains(gr.getTuteur().toString())){
     		l_tutore.getItems().add(cpt, gr.getEleve().toString());
     		l_tuteur.getItems().add(cpt, gr.getTuteur().toString());
     		cpt++;
@@ -360,12 +359,14 @@ public class Controller {
     }
     
     public void suppCouple(ActionEvent event) {
-    	supp.add(l_tutore.getItems().get(indexList));
-    	supp.add(l_tuteur.getItems().get(indexList));
+    	suppTutore.add(l_tutore.getItems().get(indexList));
+    	suppTuteur.add(l_tuteur.getItems().get(indexList));
     	l_tutore.getItems().remove(indexList);
     	l_tuteur.getItems().remove(indexList);
     	
     }
+    
+    
 
 }
 
