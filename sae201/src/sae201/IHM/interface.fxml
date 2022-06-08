@@ -5,12 +5,14 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="594.0" prefWidth="892.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="IHM.Controller">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="598.0" prefWidth="1382.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="IHM.Controller">
    <children>
       <HBox prefHeight="594.0" prefWidth="892.0">
          <children>
@@ -31,7 +33,7 @@
                               <Label fx:id="info_tutore" prefHeight="305.0" prefWidth="248.0" text="Infos" />
                            </children>
                         </VBox>
-                        <Line endX="-100.20706176757812" endY="328.89288330078125" startX="-100.0" />
+                        <Line endX="-101.4141845703125" endY="353.6929016113281" startX="-100.0" />
                         <VBox prefHeight="330.0" prefWidth="259.0">
                            <children>
                               <Label prefHeight="3.0" prefWidth="250.0" text="Tuteur" />
@@ -39,6 +41,7 @@
                               <Label fx:id="infos_tuteur" prefHeight="305.0" prefWidth="248.0" text="Infos" />
                            </children>
                         </VBox>
+                        <Line endX="2.7928199768066406" endY="268.7928771972656" startX="-0.4000244140625" startY="-86.80000305175781" />
                      </children>
                   </HBox>
                   <Line endX="583.9697265625" endY="-557.9561157226562" startX="55.87678527832031" startY="-559.2490234375" />
@@ -53,15 +56,55 @@
                   <AnchorPane prefHeight="238.0" prefWidth="524.0">
                      <children>
                         <Button fx:id="bsupp_couple" layoutX="192.0" layoutY="14.0" mnemonicParsing="false" onAction="#suppCouple" prefHeight="51.0" prefWidth="146.0" text="Supprimer le couple" />
-                        <Button fx:id="add_aff" layoutX="192.0" layoutY="143.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="146.0" text="Créer une affection" />
-                        <Button fx:id="auto_aff" layoutX="192.0" layoutY="80.0" mnemonicParsing="false" onAction="#remplir" prefHeight="51.0" prefWidth="146.0" text="Affectation automatique" />
+                        <Button fx:id="auto_aff" layoutX="192.0" layoutY="119.0" mnemonicParsing="false" onAction="#remplir" prefHeight="51.0" prefWidth="146.0" text="Affectation automatique" />
                         <ComboBox fx:id="matiere" layoutX="14.0" layoutY="27.0" prefWidth="150.0" />
                         <Button fx:id="valider" layoutX="63.0" layoutY="67.0" mnemonicParsing="false" onAction="#affParMatiere" text="Valider" />
+                        <Line endX="-1.5" endY="60.399993896484375" layoutX="529.0" layoutY="156.0" startX="-1.5" startY="-156.00001525878906" />
                      </children>
                   </AnchorPane>
                </children>
             </VBox>
          </children>
       </HBox>
+      <Label layoutX="1063.0" text="Créer une affectation">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="1240.0" layoutY="50.0" text="Tuteur">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <Line endX="301.0" endY="-7.799997329711914" layoutX="1081.0" layoutY="27.0" startX="-193.0" startY="-7.799997329711914" />
+      <Line endX="-0.4000244140625" endY="92.2928466796875" layoutX="1134.0" layoutY="116.0" startX="-0.4000244140625" startY="-98.29999542236328" />
+      <Label layoutX="1149.0" layoutY="80.0" text="Nom :" />
+      <Label layoutX="1141.0" layoutY="104.0" text="Prénom :" />
+      <Label layoutX="1142.0" layoutY="132.0" text="Moyenne :" />
+      <TextField fx:id="nomTutore" layoutX="954.0" layoutY="76.0" />
+      <TextField fx:id="prenomTutore" layoutX="954.0" layoutY="102.0" />
+      <TextField fx:id="moyenneTutore" layoutX="954.0" layoutY="128.0" />
+      <TextField fx:id="nomTuteur" layoutX="1206.0" layoutY="76.0" />
+      <TextField fx:id="prenomTuteur" layoutX="1206.0" layoutY="100.0" />
+      <TextField fx:id="moyenneTuteur" layoutX="1206.0" layoutY="128.0" />
+      <ComboBox fx:id="motivationTutore" layoutX="953.0" layoutY="154.0" prefWidth="150.0" />
+      <Line endX="299.99993896484375" endY="-1.52587890625E-5" layoutX="1081.0" layoutY="210.0" startX="-193.79998779296875" startY="-3.0517578125E-5" />
+      <ComboBox fx:id="matiereAdd" layoutX="982.0" layoutY="247.0" prefHeight="26.0" prefWidth="301.0" />
+      <Label layoutX="1109.0" layoutY="221.0" text="Matière">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <Line endX="300.0" endY="-1.1444091796875E-5" layoutX="1081.0" layoutY="290.0" startX="-191.557373046875" startY="-3.0517578125E-5" />
+      <Button fx:id="creer" layoutX="1062.0" layoutY="334.0" mnemonicParsing="false" onAction="#create" prefHeight="69.0" prefWidth="142.0" text="Créer" textFill="#ff2929" textOverrun="WORD_ELLIPSIS">
+         <font>
+            <Font name="DejaVu Sans Bold" size="29.0" />
+         </font>
+      </Button>
+      <Label layoutX="913.0" layoutY="80.0" text="Nom :" />
+      <Label layoutX="905.0" layoutY="106.0" text="Prénom :" />
+      <Label layoutX="896.0" layoutY="132.0" text="Moyenne :" />
+      <Line endX="-0.4000244140625" endY="92.2928466796875" layoutX="892.0" layoutY="285.0" startX="-0.4000244140625" startY="71.79998779296875" />
+      <Label layoutX="892.0" layoutY="158.0" text="Motivation :" />
    </children>
 </AnchorPane>

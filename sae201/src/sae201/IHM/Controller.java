@@ -11,6 +11,8 @@ import java.util.ResourceBundle;
 import AffectationBinomes.Vivier;
 import ModelisationEtudiants.Candidat;
 import ModelisationEtudiants.GroupeTutore;
+import ModelisationEtudiants.Matiere;
+import ModelisationEtudiants.Motivation;
 import ModelisationEtudiants.Tuteur;
 import fr.ulille.but.sae2_02.graphes.Arete;
 import fr.ulille.but.sae2_02.graphes.CalculAffectation;
@@ -19,11 +21,16 @@ import javafx.collections.FXCollections;
 import javafx.collections.ListChangeListener;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.RadioButton;
+import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
 public class Controller {
 	private int indexList;
@@ -169,7 +176,24 @@ public class Controller {
 		}
 		return l1;
 	}
-
+	@FXML
+	private TextField nomTuteur;
+	@FXML
+	private TextField prenomTuteur;
+	@FXML
+	private TextField moyenneTuteur;
+	@FXML
+	private TextField prenomTutore;
+	@FXML
+	private TextField nomTutore;
+	@FXML
+	private TextField moyenneTutore;
+	@FXML
+	private ComboBox<String> motivationTutore;
+	@FXML
+	private ComboBox<String> matiereAdd;
+	@FXML
+	private Button creer;
     @FXML
     private Button add_aff;
     @FXML
@@ -312,10 +336,12 @@ public class Controller {
     	vivier = new Vivier();
     	vivier.remplirTuteurCandidat();
     	vivier.remplirTuteurCandidatParMatiere();
-    	affectation(vivier);
+    	motivationTutore.setItems(FXCollections.observableArrayList("SANS_MOTIVATION","PEU_MOTIVE","MOTIVE","TRES_MOTIVE"));
+    	matiereAdd.setItems(FXCollections.observableArrayList("POO","IHM","BDD","GRAPHES","WEB","BAS_NIVEAU","SYSTEME","TOUS"));
     	matiere.setItems(FXCollections.observableArrayList("POO","IHM","BDD","GRAPHES","WEB","BAS_NIVEAU","SYSTEME","TOUS"));
     	l_tutore.getSelectionModel().getSelectedItems().addListener( new TutoreInfoListener() );
     	l_tuteur.getSelectionModel().getSelectedItems().addListener(new	 TuteurInfoListener());
+    	affectation(vivier);
     }
     
     
@@ -364,6 +390,68 @@ public class Controller {
     	l_tutore.getItems().remove(indexList);
     	l_tuteur.getItems().remove(indexList);
     	
+    }
+    
+    
+   
+    
+    
+    
+    public void create() {
+    	ArrayList<GroupeTutore> gt ;
+    	String nTuteur = nomTuteur.getText();
+    	String pTuteur = prenomTuteur.getText();
+    	int mTuteur = Integer.parseInt(moyenneTuteur.getText());
+    	String nTutore = nomTutore.getText();
+    	String pTutore = prenomTutore.getText();
+    	int mTutore = Integer.parseInt(moyenneTutore.getText());
+    	Tuteur t = new Tuteur(nTuteur,pTuteur,mTuteur,3);
+    	Motivation m ;
+    	if (motivationTutore.getValue().equals("SANS_MOTIVATION")) {
+    		m=Motivation.SANS_MOTIVATION;
+    	}
+    	else if (motivationTutore.getValue().equals("PEU_MOTIVE")) {
+    		m=Motivation.PEU_MOTIVE;
+    	}
+    	else if (motivationTutore.getValue().equals("MOTIVE")) {
+    		m=Motivation.MOTIVE;
+    	}
+    	else {
+    		m=Motivation.TRES_MOTIVE;
+    	}
+    	Matiere mat;
+    	if (!matiereAdd.getValue().equals(null) && matiereAdd.getValue().equals("POO")) {
+			mat=Matiere.POO;
+			gt=gt2;
+		}
+		else if (matiereAdd.getValue().equals("IHM")) {
+			mat=Matiere.IHM;
+			gt=gt3;
+		}
+		else if (matiereAdd.getValue().equals("BDD")) {
+			mat=Matiere.BDD;
+			gt=gt4;
+		}
+		else if (matiereAdd.getValue().equals("WEB")) {
+			mat=Matiere.WEB;
+			gt=gt1;
+		}
+		else if (matiereAdd.getValue().equals("GRAPHES")) {
+			mat=Matiere.GRAPHES;
+			gt=gt5;
+		}
+		else if (matiereAdd.getValue().equals("BAS_NIVEAU")) {
+			mat=Matiere.BAS_NIVEAU;
+			gt=gt6;
+		}
+		else  {
+			mat=Matiere.SYSTEME;
+			gt=gt7;
+		}
+		
+    	Candidat c = new Candidat(nTutore, pTutore, 1, mTutore, m,mat);
+    	GroupeTutore g = new GroupeTutore(t,c);
+    	gt.add(g);
     }
     
     
