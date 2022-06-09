@@ -1,4 +1,4 @@
-Le groupe : 0, tuteur= Auger Édouard, eleve= Payet Théodore
-Le groupe : 1, tuteur= Vallee Sophie, eleve= Muller Paulette
-Le groupe : 2, tuteur= Traore Juliette, eleve= Pascal Camille
-Le groupe : 3, tuteur= Roche Nicolas, eleve= Moreno Thierry
+Le groupe : 0, tuteur= Traore Juliette, eleve= Pascal Camille
+Le groupe : 1, tuteur= Roche Nicolas, eleve= Moreno Thierry
+Le groupe : 2, tuteur= Vallee Sophie, eleve= Muller Paulette
+Le groupe : 3, tuteur= Auger Édouard, eleve= Payet Théodore

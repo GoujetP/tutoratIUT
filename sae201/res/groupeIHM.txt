@@ -1,4 +1,4 @@
-Le groupe : 8, tuteur= Lefebvre Georges, eleve= Dijoux Martin
-Le groupe : 9, tuteur= Gay Thérèse, eleve= Dijoux Amélie
-Le groupe : 10, tuteur= Jacques daisy, eleve= Evrard Thomas
-Le groupe : 11, tuteur= Leleu Sabine, eleve= Colin David
+Le groupe : 8, tuteur= Jacques daisy, eleve= Evrard Thomas
+Le groupe : 9, tuteur= Lefebvre Georges, eleve= Dijoux Martin
+Le groupe : 10, tuteur= Leleu Sabine, eleve= Colin David
+Le groupe : 11, tuteur= Gay Thérèse, eleve= Dijoux Amélie

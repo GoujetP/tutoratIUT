@@ -1,6 +1,7 @@
 package AffectationBinomes;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -157,9 +158,9 @@ public class Vivier {
 		
 		try
 		{
-			
-			String filePath = "Etudiant.csv";
-			FileReader fileReader = new FileReader(filePath);
+			String myPath = System.getProperty("user.dir") + File.separator + "res" + File.separator;
+			String myFile = "Etudiant.csv";
+			FileReader fileReader = new FileReader(myPath + myFile);
 			
 			BufferedReader reader = new BufferedReader(fileReader);
 			
@@ -171,7 +172,7 @@ public class Vivier {
 				}
 			}
 			fileReader.close();
-			fileReader= new FileReader(filePath);
+			fileReader= new FileReader(myPath + myFile);
 			reader = new BufferedReader(fileReader);
 			while ((line = reader.readLine()) != null ){
 				String[] token = line.split(delimiter);

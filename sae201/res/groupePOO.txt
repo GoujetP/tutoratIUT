@@ -1,4 +1,4 @@
 Le groupe : 4, tuteur= Bertin François, eleve= Besnard Sabine
-Le groupe : 5, tuteur= Fernandez Maurice, eleve= Bigot Hugues
-Le groupe : 6, tuteur= Boyer Joseph, eleve= Barre Madeleine
-Le groupe : 7, tuteur= Delmas Martin, eleve= Allard Claude
+Le groupe : 5, tuteur= Delmas Martin, eleve= Allard Claude
+Le groupe : 6, tuteur= Fernandez Maurice, eleve= Bigot Hugues
+Le groupe : 7, tuteur= Boyer Joseph, eleve= Barre Madeleine

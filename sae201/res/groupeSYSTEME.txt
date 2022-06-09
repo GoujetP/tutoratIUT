@@ -1,4 +1,4 @@
-Le groupe : 24, tuteur= Sanchez Paul, eleve= Schmitt Aurore
-Le groupe : 25, tuteur= Marchand Alex, eleve= Boulay Alexandria
-Le groupe : 26, tuteur= Letellier Charles, eleve= Chauveau Hortense
-Le groupe : 27, tuteur= Nicolas Josette, eleve= Brun Anouk
+Le groupe : 24, tuteur= Letellier Charles, eleve= Chauveau Hortense
+Le groupe : 25, tuteur= Nicolas Josette, eleve= Brun Anouk
+Le groupe : 26, tuteur= Marchand Alex, eleve= Boulay Alexandria
+Le groupe : 27, tuteur= Sanchez Paul, eleve= Schmitt Aurore
