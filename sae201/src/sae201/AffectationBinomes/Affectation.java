@@ -51,8 +51,8 @@ public class Affectation {
 		}
 		return l1;
 	}
-	
-	private static int moinsBonTuteur(ArrayList<Tuteur> tuteur) {
+
+	public static int moinsBonTuteur(ArrayList<Tuteur> tuteur) {
 		double tmp = 20;
 		int cpt = -1;
 		int pos = 0;
@@ -63,10 +63,11 @@ public class Affectation {
 				pos=cpt;
 			}
 		}
+		
 		return pos;
 	}
-	
-	private static int meilleurCandidat(ArrayList<Candidat> tutore) {
+
+	public static int meilleurCandidat(ArrayList<Candidat> tutore) {
 		double tmp = 0;
 		int cpt = -1;
 		int pos = 0;
@@ -79,7 +80,7 @@ public class Affectation {
 		}
 		return pos;
 	}
-	
+
 	public static void filtrage(ArrayList<Tuteur> tuteur, ArrayList<Candidat> tutore) {
 		if(tuteur.size() != tutore.size()) {
 			if(tuteur.size() > tutore.size()) {
@@ -92,7 +93,7 @@ public class Affectation {
 				}
 			}
 		}
-			
+
 	}
 
 	public static void ExportGroupeTutoreMatiere(List<Arete> res , ArrayList<Tuteur> tuteur , ArrayList<Candidat> tutore ) {
@@ -142,8 +143,16 @@ public class Affectation {
 		GrapheNonOrienteValue<String> g5 = new GrapheNonOrienteValue(); 
 		GrapheNonOrienteValue<String> g6 = new GrapheNonOrienteValue(); 
 		GrapheNonOrienteValue<String> g7 = new GrapheNonOrienteValue(); 
-		//Les futurs abscisses et ordonn√©es de notre matrice d'adjacence
-		//On remplit nos liste
+		//filtrage, gËre si il y a trop d'Ètudiants dans une des deux listes
+		filtrage(vivier.getTuteursBAS_NIVEAU(),vivier.getCandidatsBAS_NIVEAU());
+		filtrage(vivier.getTuteursBDD(),vivier.getCandidatsBDD());
+		filtrage(vivier.getTuteursGRAPHES(),vivier.getCandidatsGRAPHES());
+		filtrage(vivier.getTuteursIHM(),vivier.getCandidatsIHM());
+		filtrage(vivier.getTuteursPOO(),vivier.getCandidatsPOO());
+		filtrage(vivier.getTuteursSYSTEME(),vivier.getCandidatsSYSTEME());
+		filtrage(vivier.getTuteursWEB(),vivier.getCandidatsWEB());
+		// Les futurs abscisses et ordonn√©es de notre matrice d'adjacence
+		// On remplit nos liste
 		// tri par ordre croissant
 		ArrayList<String> lTPOO = tuteurMatriceAdj(vivier.getTuteursPOO());
 		ArrayList<String> lCPOO = tutoreMatriceAdj(vivier.getCandidatsPOO());

@@ -2,7 +2,6 @@ package ModelisationEtudiants;
 
 /**
  * Classe Candidat, hérite d'Etudiant : un candidat est un étudiant spécifié dans une matière et qui a une motivation
- * @author daniel.fanion.etu
  */
 public class Candidat extends Etudiant {
 	private Motivation motivation;
