@@ -51,6 +51,49 @@ public class Affectation {
 		}
 		return l1;
 	}
+	
+	private static int moinsBonTuteur(ArrayList<Tuteur> tuteur) {
+		double tmp = 20;
+		int cpt = -1;
+		int pos = 0;
+		for(Tuteur t: tuteur) {
+			cpt++;
+			if(t.getMoyenne()<tmp) {
+				tmp = t.getMoyenne();
+				pos=cpt;
+			}
+		}
+		return pos;
+	}
+	
+	private static int meilleurCandidat(ArrayList<Candidat> tutore) {
+		double tmp = 0;
+		int cpt = -1;
+		int pos = 0;
+		for(Candidat c: tutore) {
+			cpt++;
+			if(c.getMoyenne()>tmp) {
+				tmp = c.getMoyenne();
+				pos=cpt;
+			}
+		}
+		return pos;
+	}
+	
+	public static void filtrage(ArrayList<Tuteur> tuteur, ArrayList<Candidat> tutore) {
+		if(tuteur.size() != tutore.size()) {
+			if(tuteur.size() > tutore.size()) {
+				while(!(tuteur.size() == tutore.size())) {
+					tuteur.remove(moinsBonTuteur(tuteur));
+				}
+			}else if(tuteur.size() < tutore.size()) {
+				while(!(tuteur.size() == tutore.size())) {
+					tuteur.remove(meilleurCandidat(tutore));
+				}
+			}
+		}
+			
+	}
 
 	public static void ExportGroupeTutoreMatiere(List<Arete> res , ArrayList<Tuteur> tuteur , ArrayList<Candidat> tutore ) {
 		ArrayList<GroupeTutore> groupe_tutore = new ArrayList<GroupeTutore>();
