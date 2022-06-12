@@ -1,4 +1,4 @@
-Le groupe : 12, tuteur= Pons Jacqueline, eleve= Guerin Émile
-Le groupe : 13, tuteur= Moreno Henri, eleve= Goncalves Guy
-Le groupe : 14, tuteur= Renault Pénélope, eleve= Hamel Guillaume
-Le groupe : 15, tuteur= Muller Vincent, eleve= Guillou Éléonore
+Le groupe : 12, tuteur= Muller Vincent, eleve= Guillou Éléonore
+Le groupe : 13, tuteur= Renault Pénélope, eleve= Hamel Guillaume
+Le groupe : 14, tuteur= Pons Jacqueline, eleve= Guerin Émile
+Le groupe : 15, tuteur= Moreno Henri, eleve= Goncalves Guy

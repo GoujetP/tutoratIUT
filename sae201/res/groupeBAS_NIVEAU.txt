@@ -1,4 +1,4 @@
-Le groupe : 20, tuteur= Hebert Franck, eleve= Roux Marine
-Le groupe : 21, tuteur= Lefebvre Daniel, eleve= Pichon Édith
+Le groupe : 20, tuteur= Lefebvre Daniel, eleve= Pichon Édith
+Le groupe : 21, tuteur= Gautier Inès, eleve= Perrier Céline
 Le groupe : 22, tuteur= Gallet Olivier, eleve= Renard Agnès
-Le groupe : 23, tuteur= Gautier Inès, eleve= Perrier Céline
+Le groupe : 23, tuteur= Hebert Franck, eleve= Roux Marine
