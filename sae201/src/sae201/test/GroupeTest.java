@@ -21,7 +21,7 @@ public class GroupeTest {
 		Tuteur tuteur2 = new Tuteur("Letellier","Quentin",14.5,3,Matiere.IHM);
 		Candidat eleve2 = new Candidat("Guerin","Émile",5,4.8,Matiere.IHM);
 		GroupeTutore groupe2 = new GroupeTutore(tuteur2,eleve2);
-		assertEquals("Le groupe : 1, tuteur= Paul Sanchez, eleve= Marie Lecocq",groupe1.toString());
-		assertEquals("Le groupe : 5, tuteur= Quentin Letellier, eleve= Emile Guerin",groupe2.toString());
+		assertEquals("Le groupe : 0, tuteur= Sanchez Paul, eleve= Lecocq Marie",groupe1.toString());
+		assertEquals("Le groupe : 1, tuteur= Letellier Quentin, eleve= Guerin Émile",groupe2.toString());
 	}
 }

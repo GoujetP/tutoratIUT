@@ -13,19 +13,28 @@ import fr.ulille.but.sae2_02.graphes.CalculAffectation;
 import fr.ulille.but.sae2_02.graphes.GrapheNonOrienteValue;
 
 public class Affectation {
-	public static void AddSommetAffectation(GrapheNonOrienteValue<String> g1 , ArrayList<Tuteur> tuteur , ArrayList<Candidat> tutore) {
+	public static void AddSommetAffectation(GrapheNonOrienteValue<String> g1 , ArrayList<Tuteur> tuteur , ArrayList<Candidat> tutore, String ponderation) {
 		for(int i = 0 ; i < tuteur.size() ; i++) {
 			Tuteur  t =tuteur.get(i);
 			g1.ajouterSommet(t.initiale());
 			for(int j = 0 ; j < tutore.size() ; j++) {
-				
+
 				g1.ajouterSommet(tutore.get(j).initiale());
-				g1.ajouterArete(tuteur.get(i).initiale(), tutore.get(j).initiale(), ((20-tuteur.get(i).getMoyenne())/tuteur.get(i).getAnnee()+tutore.get(j).getMoyenne()));
+				if(ponderation.equals("moyenne tuteur")) {
+					g1.ajouterArete(tuteur.get(i).initiale(), tutore.get(j).initiale(), (((20-tuteur.get(i).getMoyenne())*3)/tuteur.get(i).getAnnee()+tutore.get(j).getMoyenne()));
+				}else if(ponderation.equals("annee")) {
+					g1.ajouterArete(tuteur.get(i).initiale(), tutore.get(j).initiale(), ((20-tuteur.get(i).getMoyenne())/(tuteur.get(i).getAnnee()*0.5)+tutore.get(j).getMoyenne()));
+				}else if(ponderation.equals("moyenne tutore")) {
+					g1.ajouterArete(tuteur.get(i).initiale(), tutore.get(j).initiale(), (((20-tuteur.get(i).getMoyenne()))/tuteur.get(i).getAnnee()+(tutore.get(j).getMoyenne()*3)));
+				}else {
+					g1.ajouterArete(tuteur.get(i).initiale(), tutore.get(j).initiale(), ((20-tuteur.get(i).getMoyenne())/tuteur.get(i).getAnnee()+tutore.get(j).getMoyenne()));
+				}
+
 			}
-			
+
 		}
 	}
-	
+
 	public static ArrayList<String> tuteurMatriceAdj(ArrayList<Tuteur> tuteur ) {
 		ArrayList<String> l1 = new ArrayList<String>();
 		for(int i = 0 ; i < tuteur.size() ; i++){
@@ -34,7 +43,7 @@ public class Affectation {
 		}
 		return l1;
 	}
-	
+
 	public static ArrayList<String> tutoreMatriceAdj(ArrayList<Candidat> tutore ) {
 		ArrayList<String> l1 = new ArrayList<String>();
 		for(int i = 0 ; i < tutore.size(); i++){
@@ -42,7 +51,51 @@ public class Affectation {
 		}
 		return l1;
 	}
-	
+
+	public static int moinsBonTuteur(ArrayList<Tuteur> tuteur) {
+		double tmp = 20;
+		int cpt = -1;
+		int pos = 0;
+		for(Tuteur t: tuteur) {
+			cpt++;
+			if(t.getMoyenne()<tmp) {
+				tmp = t.getMoyenne();
+				pos=cpt;
+			}
+		}
+		
+		return pos;
+	}
+
+	public static int meilleurCandidat(ArrayList<Candidat> tutore) {
+		double tmp = 0;
+		int cpt = -1;
+		int pos = 0;
+		for(Candidat c: tutore) {
+			cpt++;
+			if(c.getMoyenne()>tmp) {
+				tmp = c.getMoyenne();
+				pos=cpt;
+			}
+		}
+		return pos;
+	}
+
+	public static void filtrage(ArrayList<Tuteur> tuteur, ArrayList<Candidat> tutore) {
+		if(tuteur.size() != tutore.size()) {
+			if(tuteur.size() > tutore.size()) {
+				while(!(tuteur.size() == tutore.size())) {
+					tuteur.remove(moinsBonTuteur(tuteur));
+				}
+			}else if(tuteur.size() < tutore.size()) {
+				while(!(tuteur.size() == tutore.size())) {
+					tuteur.remove(meilleurCandidat(tutore));
+				}
+			}
+		}
+
+	}
+
 	public static void ExportGroupeTutoreMatiere(List<Arete> res , ArrayList<Tuteur> tuteur , ArrayList<Candidat> tutore ) {
 		ArrayList<GroupeTutore> groupe_tutore = new ArrayList<GroupeTutore>();
 		Tuteur t = tuteur.get(0);
@@ -51,20 +104,20 @@ public class Affectation {
 		for(int i = 0 ; i < res.size() ; i++ ) {
 			for (int j = 0 ;j < tuteur.size() ; j++) {
 				if (tuteur.get(j).getId()==Integer.parseInt(res.get(i).getExtremite1().toString().substring(2))){
-					 t = tuteur.get(j);
+					t = tuteur.get(j);
 				}
 				if (tutore.get(j).getId()==Integer.parseInt(res.get(i).getExtremite2().toString().substring(2))){
-					 c = tutore.get(j);
+					c = tutore.get(j);
 				}
 			}
 			groupe_tutore.add(new GroupeTutore(t,c));
-			
-				
+
+
 		}
-		
+
 		try (BufferedWriter bw = new BufferedWriter(new FileWriter("./res/groupe"+tuteur.get(0).getMatiere()+".txt"))){
 			for (GroupeTutore s : groupe_tutore) {
-				
+
 				bw.write(s.toString());
 				bw.newLine();
 			}
@@ -74,11 +127,12 @@ public class Affectation {
 			System.err.println("Erreur ecriture");
 		}
 	}
-	
-	
-	
-	
+
+
+
+
 	public static void main(String[] args) {
+		String ponderation = "null"; // � g�rer avec l'ihm
 		Vivier vivier = new Vivier();
 		vivier.remplirTuteurCandidatParMatiere();
 		//Instanciation de notre Graphe g1, où l'on ajoutera nos candidats et tutorants en sommets
@@ -89,8 +143,16 @@ public class Affectation {
 		GrapheNonOrienteValue<String> g5 = new GrapheNonOrienteValue(); 
 		GrapheNonOrienteValue<String> g6 = new GrapheNonOrienteValue(); 
 		GrapheNonOrienteValue<String> g7 = new GrapheNonOrienteValue(); 
-		//Les futurs abscisses et ordonnées de notre matrice d'adjacence
-		//On remplit nos liste
+		//filtrage, g�re si il y a trop d'�tudiants dans une des deux listes
+		filtrage(vivier.getTuteursBAS_NIVEAU(),vivier.getCandidatsBAS_NIVEAU());
+		filtrage(vivier.getTuteursBDD(),vivier.getCandidatsBDD());
+		filtrage(vivier.getTuteursGRAPHES(),vivier.getCandidatsGRAPHES());
+		filtrage(vivier.getTuteursIHM(),vivier.getCandidatsIHM());
+		filtrage(vivier.getTuteursPOO(),vivier.getCandidatsPOO());
+		filtrage(vivier.getTuteursSYSTEME(),vivier.getCandidatsSYSTEME());
+		filtrage(vivier.getTuteursWEB(),vivier.getCandidatsWEB());
+		// Les futurs abscisses et ordonnées de notre matrice d'adjacence
+		// On remplit nos liste
 		// tri par ordre croissant
 		ArrayList<String> lTPOO = tuteurMatriceAdj(vivier.getTuteursPOO());
 		ArrayList<String> lCPOO = tutoreMatriceAdj(vivier.getCandidatsPOO());
@@ -107,13 +169,13 @@ public class Affectation {
 		ArrayList<String> lTSYSTEME = tuteurMatriceAdj(vivier.getTuteursSYSTEME());
 		ArrayList<String> lCSYSTEME = tutoreMatriceAdj(vivier.getCandidatsSYSTEME());
 		//Ici, à l'aide d'un double for, nous affectons les poids sur chaques arêtes grâce à notre fonction, pour ensuite faire une affectation de coût minimale
-		AddSommetAffectation(g1,vivier.getTuteursPOO(),vivier.getCandidatsPOO());
-		AddSommetAffectation(g3,vivier.getTuteursBDD(),vivier.getCandidatsBDD());
-		AddSommetAffectation(g4,vivier.getTuteursGRAPHES(),vivier.getCandidatsGRAPHES());
-		AddSommetAffectation(g5,vivier.getTuteursWEB(),vivier.getCandidatsWEB());
-		AddSommetAffectation(g2,vivier.getTuteursIHM(),vivier.getCandidatsIHM());
-		AddSommetAffectation(g6,vivier.getTuteursBAS_NIVEAU(),vivier.getCandidatsBAS_NIVEAU());
-		AddSommetAffectation(g7,vivier.getTuteursSYSTEME(),vivier.getCandidatsSYSTEME());
+		AddSommetAffectation(g1,vivier.getTuteursPOO(),vivier.getCandidatsPOO(),ponderation);
+		AddSommetAffectation(g3,vivier.getTuteursBDD(),vivier.getCandidatsBDD(),ponderation);
+		AddSommetAffectation(g4,vivier.getTuteursGRAPHES(),vivier.getCandidatsGRAPHES(),ponderation);
+		AddSommetAffectation(g5,vivier.getTuteursWEB(),vivier.getCandidatsWEB(),ponderation);
+		AddSommetAffectation(g2,vivier.getTuteursIHM(),vivier.getCandidatsIHM(),ponderation);
+		AddSommetAffectation(g6,vivier.getTuteursBAS_NIVEAU(),vivier.getCandidatsBAS_NIVEAU(),ponderation);
+		AddSommetAffectation(g7,vivier.getTuteursSYSTEME(),vivier.getCandidatsSYSTEME(),ponderation);
 		CalculAffectation caPOO = new CalculAffectation(g1, lTPOO, lCPOO);
 		CalculAffectation caIHM = new CalculAffectation(g2, lTIHM, lCIHM);
 		CalculAffectation caBDD = new CalculAffectation(g3,lTBDD, lCBDD);
@@ -136,8 +198,8 @@ public class Affectation {
 		ExportGroupeTutoreMatiere(resBASNIVEAU,vivier.getTuteursBAS_NIVEAU(),vivier.getCandidatsBAS_NIVEAU());
 		ExportGroupeTutoreMatiere(resSYSTEME,vivier.getTuteursSYSTEME(),vivier.getCandidatsSYSTEME());
 		System.out.println("Les résultats sont dans le fichier res.");
-		
-		
+
+
 	}
 }
 
