@@ -452,6 +452,9 @@ public class Controller {
     	Candidat c = new Candidat(nTutore, pTutore, 1, mTutore, m,mat);
     	GroupeTutore g = new GroupeTutore(t,c);
     	gt.add(g);
+    	
+    	l_tuteur.getItems().add(t.toString());
+    	l_tutore.getItems().add(c.toString());
     }
     
     
